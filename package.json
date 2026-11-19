@@ -1,8 +1,8 @@
 {
-  "name": "gladys-integration-template-js",
+  "name": "gladys-agile-predict",
   "version": "1.0.0",
   "private": true,
-  "description": "Official starter template to build an external integration for Gladys Assistant with the JavaScript SDK.",
+  "description": "Gladys Assistant integration: Octopus Agile prices forecast up to 7 days ahead (UK), from AgilePredict.",
   "type": "module",
   "main": "index.js",
   "scripts": {

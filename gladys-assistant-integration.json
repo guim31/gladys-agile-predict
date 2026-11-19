@@ -1,177 +1,1712 @@
 {
   "manifest_version": 1,
   "type": "device",
-  "name": "Demo Devices Template",
+  "name": "Octopus Agile Forecast",
   "description": {
-    "en": "Starter template showing sensors, a switch, a dimmable light and a smart plug.",
-    "fr": "Template de démarrage : capteurs, interrupteur, lampe variable et prise connectée."
+    "en": "Octopus Agile prices forecast up to 7 days ahead (AgilePredict), to plan big loads in the UK.",
+    "fr": "Prix Octopus Agile prévus à 7 jours (AgilePredict) pour planifier les gros usages au Royaume-Uni.",
+    "de": "Octopus-Agile-Preise bis 7 Tage im Voraus (AgilePredict), um große Verbraucher in UK zu planen.",
+    "es": "Precios Octopus Agile previstos a 7 días (AgilePredict) para planificar consumos en Reino Unido."
   },
   "version": "1.0.0",
-  "docker_image": "ghcr.io/gladysassistant/integration-template-js:1.0.0",
-  "gladys_version": ">=5.1.0",
-  "cover_image": "https://raw.githubusercontent.com/GladysAssistant/integration-template-js/master/cover.png",
-  "categories": ["lighting", "security", "environment"],
-  "transports": ["local", "cloud"],
+  "docker_image": "ghcr.io/guim31/gladys-agile-predict:1.0.0",
+  "gladys_version": ">=5.3.0",
+  "cover_image": "https://raw.githubusercontent.com/guim31/gladys-agile-predict/main/cover.png",
+  "categories": ["energy"],
+  "countries": ["GB"],
+  "transports": ["cloud"],
   "config_schema": [
     {
       "key": "intro",
       "type": "section",
-      "label": { "en": "Getting started", "fr": "Pour commencer" },
+      "label": {
+        "en": "Octopus Agile price forecast",
+        "fr": "Prévision des prix Octopus Agile",
+        "de": "Octopus-Agile-Preisprognose",
+        "es": "Previsión de precios Octopus Agile"
+      },
       "description": {
-        "en": "The demo weather station reads real data from the free Open-Meteo API: pick the coordinates to observe. No account, no API key.",
-        "fr": "La station météo de démonstration lit de vraies données via l'API gratuite Open-Meteo : choisissez les coordonnées à observer. Pas de compte, pas de clé d'API."
+        "en": "AgilePredict (agilepredict.com) forecasts the Octopus Agile import prices of each region half-hour by half-hour, up to a week ahead, VAT included, without account or key. A forecast, not the published prices: for those, use an Octopus Energy integration. Pick your region below, then add its device from the Discovery tab. Not affiliated with Octopus Energy or AgilePredict.",
+        "fr": "AgilePredict (agilepredict.com) prévoit les prix d'achat Octopus Agile de chaque région, demi-heure par demi-heure, jusqu'à une semaine à l'avance, TVA comprise, sans compte ni clé. C'est une prévision, pas les prix publiés : pour eux, utilisez une intégration Octopus Energy. Choisissez votre région ci-dessous, puis ajoutez son appareil depuis l'onglet Découverte. Sans lien avec Octopus Energy ni AgilePredict.",
+        "de": "AgilePredict (agilepredict.com) sagt die Octopus-Agile-Bezugspreise jeder Region halbstündlich voraus, bis zu einer Woche im Voraus, inkl. MwSt., ohne Konto und ohne Schlüssel. Eine Prognose, nicht die veröffentlichten Preise: Für diese nutze eine Octopus-Energy-Integration. Wähle unten deine Region und füge dann ihr Gerät über den Tab „Entdecken“ hinzu. Nicht mit Octopus Energy oder AgilePredict verbunden.",
+        "es": "AgilePredict (agilepredict.com) prevé los precios de compra Octopus Agile de cada región, media hora a media hora, hasta una semana de antelación, IVA incluido, sin cuenta ni clave. Es una previsión, no los precios publicados: para estos, use una integración Octopus Energy. Elija su región abajo y luego añada su dispositivo desde la pestaña Descubrir. Sin relación con Octopus Energy ni AgilePredict."
       },
       "links": [
         {
-          "url": "https://open-meteo.com/en/docs",
-          "label": { "en": "Open-Meteo documentation", "fr": "Documentation Open-Meteo" }
+          "url": "https://github.com/guim31/gladys-agile-predict/blob/main/docs/en.md",
+          "label": {
+            "en": "Documentation",
+            "fr": "Documentation",
+            "de": "Dokumentation",
+            "es": "Documentación"
+          }
+        },
+        {
+          "url": "https://agilepredict.com/v2/api_how_to/",
+          "label": {
+            "en": "AgilePredict",
+            "fr": "AgilePredict",
+            "de": "AgilePredict",
+            "es": "AgilePredict"
+          }
         }
       ]
     },
     {
-      "key": "latitude",
-      "type": "number",
-      "label": { "en": "Latitude", "fr": "Latitude" },
-      "description": {
-        "en": "Latitude used for the demo weather sensor.",
-        "fr": "Latitude utilisée par le capteur météo de démonstration."
+      "key": "regions",
+      "type": "multi_select",
+      "label": {
+        "en": "Regions",
+        "fr": "Régions",
+        "de": "Regionen",
+        "es": "Regiones"
       },
-      "placeholder": { "en": "e.g. 48.8566", "fr": "ex. 48.8566" },
-      "required": true,
-      "default": 48.8566,
-      "min": -90,
-      "max": 90
-    },
-    {
-      "key": "longitude",
-      "type": "number",
-      "label": { "en": "Longitude", "fr": "Longitude" },
       "description": {
-        "en": "Longitude used for the demo weather sensor.",
-        "fr": "Longitude utilisée par le capteur météo de démonstration."
+        "en": "The region of your meter (the letter at the end of your Agile tariff code, e.g. E-1R-AGILE-24-10-01-C for London): one device per region.",
+        "fr": "La région de votre compteur (la lettre à la fin de votre code de tarif Agile, par ex. E-1R-AGILE-24-10-01-C pour Londres) : un appareil par région.",
+        "de": "Die Region deines Zählers (der Buchstabe am Ende deines Agile-Tarifcodes, z. B. E-1R-AGILE-24-10-01-C für London): ein Gerät pro Region.",
+        "es": "La región de su contador (la letra al final de su código de tarifa Agile, p. ej. E-1R-AGILE-24-10-01-C para Londres): un dispositivo por región."
       },
-      "placeholder": { "en": "e.g. 2.3522", "fr": "ex. 2.3522" },
-      "required": true,
-      "default": 2.3522,
-      "min": -180,
-      "max": 180
-    },
-    {
-      "key": "unit",
-      "type": "select",
-      "label": { "en": "Temperature unit", "fr": "Unité de température" },
       "required": false,
-      "default": "celsius",
+      "default": [],
       "options": [
-        { "value": "celsius", "label": { "en": "Celsius", "fr": "Celsius" } },
-        { "value": "fahrenheit", "label": { "en": "Fahrenheit", "fr": "Fahrenheit" } }
+        {
+          "value": "A",
+          "label": {
+            "en": "A – Eastern England",
+            "fr": "A – Est de l'Angleterre",
+            "de": "A – Ostengland",
+            "es": "A – Este de Inglaterra"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "en": "B – East Midlands",
+            "fr": "B – Midlands de l’Est",
+            "de": "B – East Midlands",
+            "es": "B – Midlands del Este"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "en": "C – London",
+            "fr": "C – Londres",
+            "de": "C – London",
+            "es": "C – Londres"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "en": "D – Merseyside and North Wales",
+            "fr": "D – Merseyside et nord du pays de Galles",
+            "de": "D – Merseyside und Nordwales",
+            "es": "D – Merseyside y norte de Gales"
+          }
+        },
+        {
+          "value": "E",
+          "label": {
+            "en": "E – West Midlands",
+            "fr": "E – Midlands de l’Ouest",
+            "de": "E – West Midlands",
+            "es": "E – Midlands del Oeste"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "en": "F – North Eastern England",
+            "fr": "F – Nord-Est de l'Angleterre",
+            "de": "F – Nordostengland",
+            "es": "F – Noreste de Inglaterra"
+          }
+        },
+        {
+          "value": "G",
+          "label": {
+            "en": "G – North Western England",
+            "fr": "G – Nord-Ouest de l'Angleterre",
+            "de": "G – Nordwestengland",
+            "es": "G – Noroeste de Inglaterra"
+          }
+        },
+        {
+          "value": "H",
+          "label": {
+            "en": "H – Southern England",
+            "fr": "H – Sud de l'Angleterre",
+            "de": "H – Südengland",
+            "es": "H – Sur de Inglaterra"
+          }
+        },
+        {
+          "value": "J",
+          "label": {
+            "en": "J – South Eastern England",
+            "fr": "J – Sud-Est de l'Angleterre",
+            "de": "J – Südostengland",
+            "es": "J – Sureste de Inglaterra"
+          }
+        },
+        {
+          "value": "K",
+          "label": {
+            "en": "K – South Wales",
+            "fr": "K – Sud du pays de Galles",
+            "de": "K – Südwales",
+            "es": "K – Sur de Gales"
+          }
+        },
+        {
+          "value": "L",
+          "label": {
+            "en": "L – South Western England",
+            "fr": "L – Sud-Ouest de l'Angleterre",
+            "de": "L – Südwestengland",
+            "es": "L – Suroeste de Inglaterra"
+          }
+        },
+        {
+          "value": "M",
+          "label": {
+            "en": "M – Yorkshire",
+            "fr": "M – Yorkshire",
+            "de": "M – Yorkshire",
+            "es": "M – Yorkshire"
+          }
+        },
+        {
+          "value": "N",
+          "label": {
+            "en": "N – Southern Scotland",
+            "fr": "N – Sud de l'Écosse",
+            "de": "N – Südschottland",
+            "es": "N – Sur de Escocia"
+          }
+        },
+        {
+          "value": "P",
+          "label": {
+            "en": "P – Northern Scotland",
+            "fr": "P – Nord de l'Écosse",
+            "de": "P – Nordschottland",
+            "es": "P – Norte de Escocia"
+          }
+        },
+        {
+          "value": "X",
+          "label": {
+            "en": "X – National average",
+            "fr": "X – Moyenne nationale",
+            "de": "X – Landesdurchschnitt",
+            "es": "X – Media nacional"
+          }
+        }
       ]
     },
     {
-      "key": "poll_frequency",
-      "type": "number",
-      "label": { "en": "Refresh interval (s)", "fr": "Intervalle de rafraîchissement (s)" },
+      "key": "window_hours",
+      "type": "select",
+      "label": {
+        "en": "Length of the cheapest window",
+        "fr": "Durée de la plage la moins chère",
+        "de": "Länge des günstigsten Blocks",
+        "es": "Duración del tramo más barato"
+      },
       "description": {
-        "en": "How often sensors are polled, in seconds (one minute minimum).",
-        "fr": "Fréquence d'interrogation des capteurs, en secondes (une minute minimum)."
+        "en": "The device shows the start of the cheapest run of this many consecutive hours.",
+        "fr": "L'appareil affiche le début de la suite la moins chère de ce nombre d'heures consécutives.",
+        "de": "Das Gerät zeigt den Beginn der günstigsten Folge so vieler aufeinanderfolgender Stunden.",
+        "es": "El dispositivo muestra el inicio de la serie más barata de este número de horas consecutivas."
       },
       "required": false,
-      "default": 300,
-      "min": 60,
-      "max": 3600
+      "default": "3",
+      "options": [
+        {
+          "value": "0.5",
+          "label": {
+            "en": "30 minutes",
+            "fr": "30 minutes",
+            "de": "30 Minuten",
+            "es": "30 minutos"
+          }
+        },
+        {
+          "value": "1",
+          "label": {
+            "en": "1 hour",
+            "fr": "1 heure",
+            "de": "1 Stunde",
+            "es": "1 hora"
+          }
+        },
+        {
+          "value": "1.5",
+          "label": {
+            "en": "1.5 hours",
+            "fr": "1 h 30",
+            "de": "1,5 Stunden",
+            "es": "1,5 horas"
+          }
+        },
+        {
+          "value": "2",
+          "label": {
+            "en": "2 hours",
+            "fr": "2 heures",
+            "de": "2 Stunden",
+            "es": "2 horas"
+          }
+        },
+        {
+          "value": "3",
+          "label": {
+            "en": "3 hours",
+            "fr": "3 heures",
+            "de": "3 Stunden",
+            "es": "3 horas"
+          }
+        },
+        {
+          "value": "4",
+          "label": {
+            "en": "4 hours",
+            "fr": "4 heures",
+            "de": "4 Stunden",
+            "es": "4 horas"
+          }
+        },
+        {
+          "value": "5",
+          "label": {
+            "en": "5 hours",
+            "fr": "5 heures",
+            "de": "5 Stunden",
+            "es": "5 horas"
+          }
+        },
+        {
+          "value": "6",
+          "label": {
+            "en": "6 hours",
+            "fr": "6 heures",
+            "de": "6 Stunden",
+            "es": "6 horas"
+          }
+        },
+        {
+          "value": "8",
+          "label": {
+            "en": "8 hours",
+            "fr": "8 heures",
+            "de": "8 Stunden",
+            "es": "8 horas"
+          }
+        }
+      ]
+    },
+    {
+      "key": "window_horizon",
+      "type": "select",
+      "label": {
+        "en": "Search the cheapest window in",
+        "fr": "Chercher la plage la moins chère dans",
+        "de": "Günstigsten Block suchen in",
+        "es": "Buscar el tramo más barato en"
+      },
+      "description": {
+        "en": "From the current hour.",
+        "fr": "À partir de l'heure en cours.",
+        "de": "Ab der aktuellen Stunde.",
+        "es": "A partir de la hora actual."
+      },
+      "required": false,
+      "default": "24",
+      "options": [
+        {
+          "value": "12",
+          "label": {
+            "en": "Next 12 hours",
+            "fr": "12 prochaines heures",
+            "de": "Nächste 12 Stunden",
+            "es": "Próximas 12 horas"
+          }
+        },
+        {
+          "value": "24",
+          "label": {
+            "en": "Next 24 hours",
+            "fr": "24 prochaines heures",
+            "de": "Nächste 24 Stunden",
+            "es": "Próximas 24 horas"
+          }
+        },
+        {
+          "value": "48",
+          "label": {
+            "en": "Next 48 hours",
+            "fr": "48 prochaines heures",
+            "de": "Nächste 48 Stunden",
+            "es": "Próximas 48 horas"
+          }
+        },
+        {
+          "value": "72",
+          "label": {
+            "en": "Next 72 hours",
+            "fr": "72 prochaines heures",
+            "de": "Nächste 72 Stunden",
+            "es": "Próximas 72 horas"
+          }
+        },
+        {
+          "value": "168",
+          "label": {
+            "en": "Next 7 days",
+            "fr": "7 prochains jours",
+            "de": "Nächste 7 Tage",
+            "es": "Próximos 7 días"
+          }
+        }
+      ]
+    },
+    {
+      "key": "language",
+      "type": "select",
+      "label": {
+        "en": "Language of the feature names",
+        "fr": "Langue des noms de fonctionnalités",
+        "de": "Sprache der Funktionsnamen",
+        "es": "Idioma de los nombres de las funciones"
+      },
+      "description": {
+        "en": "Used when the device is added to Gladys: the names do not change afterwards.",
+        "fr": "Utilisée quand l'appareil est ajouté à Gladys : les noms ne changent plus ensuite.",
+        "de": "Wird beim Hinzufügen des Geräts zu Gladys verwendet: Die Namen ändern sich danach nicht mehr.",
+        "es": "Se usa cuando el dispositivo se añade a Gladys: los nombres ya no cambian después."
+      },
+      "required": false,
+      "default": "fr",
+      "options": [
+        {
+          "value": "en",
+          "label": {
+            "en": "English",
+            "fr": "Anglais",
+            "de": "Englisch",
+            "es": "Inglés"
+          }
+        },
+        {
+          "value": "fr",
+          "label": {
+            "en": "French",
+            "fr": "Français",
+            "de": "Französisch",
+            "es": "Francés"
+          }
+        },
+        {
+          "value": "de",
+          "label": {
+            "en": "German",
+            "fr": "Allemand",
+            "de": "Deutsch",
+            "es": "Alemán"
+          }
+        },
+        {
+          "value": "es",
+          "label": {
+            "en": "Spanish",
+            "fr": "Espagnol",
+            "de": "Spanisch",
+            "es": "Español"
+          }
+        }
+      ]
     }
   ],
   "actions": [
     {
-      "key": "test_weather",
-      "label": { "en": "Test the weather provider", "fr": "Tester le fournisseur météo" },
-      "timeout_seconds": 30
-    },
-    {
-      "key": "identify",
-      "label": { "en": "Identify a device", "fr": "Identifier un appareil" },
-      "fields": [
-        {
-          "key": "device",
-          "type": "select",
-          "source": "devices",
-          "label": { "en": "Device", "fr": "Appareil" },
-          "required": true
-        }
-      ]
+      "key": "refresh",
+      "label": {
+        "en": "Read the forecast now",
+        "fr": "Lire la prévision maintenant",
+        "de": "Prognose jetzt lesen",
+        "es": "Leer la previsión ahora"
+      },
+      "description": {
+        "en": "Reads the forecast of your regions now and shows how far it goes.",
+        "fr": "Lit maintenant la prévision de vos régions et affiche jusqu'où elle va.",
+        "de": "Liest jetzt die Prognose deiner Regionen und zeigt, wie weit sie reicht.",
+        "es": "Lee ahora la previsión de sus regiones y muestra hasta dónde llega."
+      },
+      "timeout_seconds": 60
     }
   ],
   "scene_triggers": [
     {
-      "key": "motion_detected",
-      "label": { "en": "Motion detected", "fr": "Mouvement détecté" },
+      "key": "cheapest_window_started",
+      "label": {
+        "en": "Cheapest forecast hours begin",
+        "fr": "Les heures prévues les moins chères commencent",
+        "de": "Die günstigsten prognostizierten Stunden beginnen",
+        "es": "Empiezan las horas previstas más baratas"
+      },
       "description": {
-        "en": "A demo motion sensor saw a person or an animal move.",
-        "fr": "Un détecteur de démonstration a vu bouger une personne ou un animal."
+        "en": "Start of the cheapest run of N consecutive forecast hours of the next hours, in a region; then silent until those hours are over.",
+        "fr": "Début de la suite de N heures consécutives la moins chère des prochaines heures (prévision), dans une région, puis rien jusqu'à la fin de ces heures.",
+        "de": "Beginn der günstigsten Folge von N aufeinanderfolgenden Stunden der nächsten Stunden (Prognose) in einer Region, danach still bis zu deren Ende.",
+        "es": "Inicio de la serie de N horas consecutivas más barata de las próximas horas (previsión) en una región; luego nada hasta que terminen esas horas."
       },
       "fields": [
         {
-          "key": "device",
+          "key": "region",
           "type": "select",
-          "source": "devices",
-          "label": { "en": "Sensor", "fr": "Détecteur" }
+          "label": {
+            "en": "Regions",
+            "fr": "Régions",
+            "de": "Regionen",
+            "es": "Regiones"
+          },
+          "required": true,
+          "options": [
+            {
+              "value": "A",
+              "label": {
+                "en": "A – Eastern England",
+                "fr": "A – Est de l'Angleterre",
+                "de": "A – Ostengland",
+                "es": "A – Este de Inglaterra"
+              }
+            },
+            {
+              "value": "B",
+              "label": {
+                "en": "B – East Midlands",
+                "fr": "B – Midlands de l’Est",
+                "de": "B – East Midlands",
+                "es": "B – Midlands del Este"
+              }
+            },
+            {
+              "value": "C",
+              "label": {
+                "en": "C – London",
+                "fr": "C – Londres",
+                "de": "C – London",
+                "es": "C – Londres"
+              }
+            },
+            {
+              "value": "D",
+              "label": {
+                "en": "D – Merseyside and North Wales",
+                "fr": "D – Merseyside et nord du pays de Galles",
+                "de": "D – Merseyside und Nordwales",
+                "es": "D – Merseyside y norte de Gales"
+              }
+            },
+            {
+              "value": "E",
+              "label": {
+                "en": "E – West Midlands",
+                "fr": "E – Midlands de l’Ouest",
+                "de": "E – West Midlands",
+                "es": "E – Midlands del Oeste"
+              }
+            },
+            {
+              "value": "F",
+              "label": {
+                "en": "F – North Eastern England",
+                "fr": "F – Nord-Est de l'Angleterre",
+                "de": "F – Nordostengland",
+                "es": "F – Noreste de Inglaterra"
+              }
+            },
+            {
+              "value": "G",
+              "label": {
+                "en": "G – North Western England",
+                "fr": "G – Nord-Ouest de l'Angleterre",
+                "de": "G – Nordwestengland",
+                "es": "G – Noroeste de Inglaterra"
+              }
+            },
+            {
+              "value": "H",
+              "label": {
+                "en": "H – Southern England",
+                "fr": "H – Sud de l'Angleterre",
+                "de": "H – Südengland",
+                "es": "H – Sur de Inglaterra"
+              }
+            },
+            {
+              "value": "J",
+              "label": {
+                "en": "J – South Eastern England",
+                "fr": "J – Sud-Est de l'Angleterre",
+                "de": "J – Südostengland",
+                "es": "J – Sureste de Inglaterra"
+              }
+            },
+            {
+              "value": "K",
+              "label": {
+                "en": "K – South Wales",
+                "fr": "K – Sud du pays de Galles",
+                "de": "K – Südwales",
+                "es": "K – Sur de Gales"
+              }
+            },
+            {
+              "value": "L",
+              "label": {
+                "en": "L – South Western England",
+                "fr": "L – Sud-Ouest de l'Angleterre",
+                "de": "L – Südwestengland",
+                "es": "L – Suroeste de Inglaterra"
+              }
+            },
+            {
+              "value": "M",
+              "label": {
+                "en": "M – Yorkshire",
+                "fr": "M – Yorkshire",
+                "de": "M – Yorkshire",
+                "es": "M – Yorkshire"
+              }
+            },
+            {
+              "value": "N",
+              "label": {
+                "en": "N – Southern Scotland",
+                "fr": "N – Sud de l'Écosse",
+                "de": "N – Südschottland",
+                "es": "N – Sur de Escocia"
+              }
+            },
+            {
+              "value": "P",
+              "label": {
+                "en": "P – Northern Scotland",
+                "fr": "P – Nord de l'Écosse",
+                "de": "P – Nordschottland",
+                "es": "P – Norte de Escocia"
+              }
+            },
+            {
+              "value": "X",
+              "label": {
+                "en": "X – National average",
+                "fr": "X – Moyenne nationale",
+                "de": "X – Landesdurchschnitt",
+                "es": "X – Media nacional"
+              }
+            }
+          ]
         },
         {
-          "key": "target",
-          "type": "multi_select",
-          "label": { "en": "What moved", "fr": "Ce qui a bougé" },
+          "key": "hours",
+          "type": "select",
+          "label": {
+            "en": "Length of the window",
+            "fr": "Durée de la plage",
+            "de": "Länge des Blocks",
+            "es": "Duración del tramo"
+          },
+          "required": true,
+          "default": "3",
           "options": [
-            { "value": "person", "label": { "en": "Person", "fr": "Personne" } },
-            { "value": "animal", "label": { "en": "Animal", "fr": "Animal" } }
+            {
+              "value": "0.5",
+              "label": {
+                "en": "30 minutes",
+                "fr": "30 minutes",
+                "de": "30 Minuten",
+                "es": "30 minutos"
+              }
+            },
+            {
+              "value": "1",
+              "label": {
+                "en": "1 hour",
+                "fr": "1 heure",
+                "de": "1 Stunde",
+                "es": "1 hora"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "2 hours",
+                "fr": "2 heures",
+                "de": "2 Stunden",
+                "es": "2 horas"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "3 hours",
+                "fr": "3 heures",
+                "de": "3 Stunden",
+                "es": "3 horas"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "4 hours",
+                "fr": "4 heures",
+                "de": "4 Stunden",
+                "es": "4 horas"
+              }
+            },
+            {
+              "value": "6",
+              "label": {
+                "en": "6 hours",
+                "fr": "6 heures",
+                "de": "6 Stunden",
+                "es": "6 horas"
+              }
+            },
+            {
+              "value": "8",
+              "label": {
+                "en": "8 hours",
+                "fr": "8 heures",
+                "de": "8 Stunden",
+                "es": "8 horas"
+              }
+            }
+          ]
+        },
+        {
+          "key": "horizon",
+          "type": "select",
+          "label": {
+            "en": "Nothing cheaper in the",
+            "fr": "Rien de moins cher dans les",
+            "de": "Nichts Günstigeres in den",
+            "es": "Nada más barato en las"
+          },
+          "required": true,
+          "default": "24",
+          "options": [
+            {
+              "value": "12",
+              "label": {
+                "en": "Next 12 hours",
+                "fr": "12 prochaines heures",
+                "de": "Nächste 12 Stunden",
+                "es": "Próximas 12 horas"
+              }
+            },
+            {
+              "value": "24",
+              "label": {
+                "en": "Next 24 hours",
+                "fr": "24 prochaines heures",
+                "de": "Nächste 24 Stunden",
+                "es": "Próximas 24 horas"
+              }
+            },
+            {
+              "value": "48",
+              "label": {
+                "en": "Next 48 hours",
+                "fr": "48 prochaines heures",
+                "de": "Nächste 48 Stunden",
+                "es": "Próximas 48 horas"
+              }
+            }
           ]
         }
       ],
       "variables": [
         {
-          "key": "target",
+          "key": "average_price",
+          "type": "number",
+          "label": {
+            "en": "Average price (p/kWh)",
+            "fr": "Prix moyen (p/kWh)",
+            "de": "Durchschnittspreis (p/kWh)",
+            "es": "Precio medio (p/kWh)"
+          }
+        },
+        {
+          "key": "start_time",
           "type": "string",
-          "label": { "en": "What moved", "fr": "Ce qui a bougé" }
+          "label": {
+            "en": "Start (HH:MM)",
+            "fr": "Début (HH:MM)",
+            "de": "Beginn (HH:MM)",
+            "es": "Inicio (HH:MM)"
+          }
+        },
+        {
+          "key": "end_time",
+          "type": "string",
+          "label": {
+            "en": "End (HH:MM)",
+            "fr": "Fin (HH:MM)",
+            "de": "Ende (HH:MM)",
+            "es": "Fin (HH:MM)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "price_below_started",
+      "label": {
+        "en": "The forecast price drops below a threshold",
+        "fr": "Le prix prévu passe sous un seuil",
+        "de": "Der Prognosepreis fällt unter eine Schwelle",
+        "es": "El precio previsto baja de un umbral"
+      },
+      "description": {
+        "en": "Start of a run of half-hours under the threshold (the half-hour before was above), in a region: once per run, with its end.",
+        "fr": "Début d'une suite de demi-heures sous le seuil (la demi-heure d'avant était au-dessus), dans une région : une fois par suite, avec sa fin.",
+        "de": "Beginn einer Reihe von Halbstunden unter der Schwelle (die Halbstunde davor lag darüber) in einer Region: einmal pro Reihe, mit ihrem Ende.",
+        "es": "Inicio de una serie de medias horas por debajo del umbral (la media hora anterior estaba por encima) en una región: una vez por serie, con su fin."
+      },
+      "fields": [
+        {
+          "key": "region",
+          "type": "select",
+          "label": {
+            "en": "Regions",
+            "fr": "Régions",
+            "de": "Regionen",
+            "es": "Regiones"
+          },
+          "required": true,
+          "options": [
+            {
+              "value": "A",
+              "label": {
+                "en": "A – Eastern England",
+                "fr": "A – Est de l'Angleterre",
+                "de": "A – Ostengland",
+                "es": "A – Este de Inglaterra"
+              }
+            },
+            {
+              "value": "B",
+              "label": {
+                "en": "B – East Midlands",
+                "fr": "B – Midlands de l’Est",
+                "de": "B – East Midlands",
+                "es": "B – Midlands del Este"
+              }
+            },
+            {
+              "value": "C",
+              "label": {
+                "en": "C – London",
+                "fr": "C – Londres",
+                "de": "C – London",
+                "es": "C – Londres"
+              }
+            },
+            {
+              "value": "D",
+              "label": {
+                "en": "D – Merseyside and North Wales",
+                "fr": "D – Merseyside et nord du pays de Galles",
+                "de": "D – Merseyside und Nordwales",
+                "es": "D – Merseyside y norte de Gales"
+              }
+            },
+            {
+              "value": "E",
+              "label": {
+                "en": "E – West Midlands",
+                "fr": "E – Midlands de l’Ouest",
+                "de": "E – West Midlands",
+                "es": "E – Midlands del Oeste"
+              }
+            },
+            {
+              "value": "F",
+              "label": {
+                "en": "F – North Eastern England",
+                "fr": "F – Nord-Est de l'Angleterre",
+                "de": "F – Nordostengland",
+                "es": "F – Noreste de Inglaterra"
+              }
+            },
+            {
+              "value": "G",
+              "label": {
+                "en": "G – North Western England",
+                "fr": "G – Nord-Ouest de l'Angleterre",
+                "de": "G – Nordwestengland",
+                "es": "G – Noroeste de Inglaterra"
+              }
+            },
+            {
+              "value": "H",
+              "label": {
+                "en": "H – Southern England",
+                "fr": "H – Sud de l'Angleterre",
+                "de": "H – Südengland",
+                "es": "H – Sur de Inglaterra"
+              }
+            },
+            {
+              "value": "J",
+              "label": {
+                "en": "J – South Eastern England",
+                "fr": "J – Sud-Est de l'Angleterre",
+                "de": "J – Südostengland",
+                "es": "J – Sureste de Inglaterra"
+              }
+            },
+            {
+              "value": "K",
+              "label": {
+                "en": "K – South Wales",
+                "fr": "K – Sud du pays de Galles",
+                "de": "K – Südwales",
+                "es": "K – Sur de Gales"
+              }
+            },
+            {
+              "value": "L",
+              "label": {
+                "en": "L – South Western England",
+                "fr": "L – Sud-Ouest de l'Angleterre",
+                "de": "L – Südwestengland",
+                "es": "L – Suroeste de Inglaterra"
+              }
+            },
+            {
+              "value": "M",
+              "label": {
+                "en": "M – Yorkshire",
+                "fr": "M – Yorkshire",
+                "de": "M – Yorkshire",
+                "es": "M – Yorkshire"
+              }
+            },
+            {
+              "value": "N",
+              "label": {
+                "en": "N – Southern Scotland",
+                "fr": "N – Sud de l'Écosse",
+                "de": "N – Südschottland",
+                "es": "N – Sur de Escocia"
+              }
+            },
+            {
+              "value": "P",
+              "label": {
+                "en": "P – Northern Scotland",
+                "fr": "P – Nord de l'Écosse",
+                "de": "P – Nordschottland",
+                "es": "P – Norte de Escocia"
+              }
+            },
+            {
+              "value": "X",
+              "label": {
+                "en": "X – National average",
+                "fr": "X – Moyenne nationale",
+                "de": "X – Landesdurchschnitt",
+                "es": "X – Media nacional"
+              }
+            }
+          ]
+        },
+        {
+          "key": "threshold",
+          "type": "select",
+          "label": {
+            "en": "Threshold (VAT included)",
+            "fr": "Seuil (TVA comprise)",
+            "de": "Schwelle (inkl. MwSt.)",
+            "es": "Umbral (IVA incluido)"
+          },
+          "required": true,
+          "default": "20",
+          "options": [
+            {
+              "value": "0",
+              "label": {
+                "en": "0 p/kWh",
+                "fr": "0 p/kWh",
+                "de": "0 p/kWh",
+                "es": "0 p/kWh"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "5 p/kWh",
+                "fr": "5 p/kWh",
+                "de": "5 p/kWh",
+                "es": "5 p/kWh"
+              }
+            },
+            {
+              "value": "10",
+              "label": {
+                "en": "10 p/kWh",
+                "fr": "10 p/kWh",
+                "de": "10 p/kWh",
+                "es": "10 p/kWh"
+              }
+            },
+            {
+              "value": "15",
+              "label": {
+                "en": "15 p/kWh",
+                "fr": "15 p/kWh",
+                "de": "15 p/kWh",
+                "es": "15 p/kWh"
+              }
+            },
+            {
+              "value": "20",
+              "label": {
+                "en": "20 p/kWh",
+                "fr": "20 p/kWh",
+                "de": "20 p/kWh",
+                "es": "20 p/kWh"
+              }
+            },
+            {
+              "value": "25",
+              "label": {
+                "en": "25 p/kWh",
+                "fr": "25 p/kWh",
+                "de": "25 p/kWh",
+                "es": "25 p/kWh"
+              }
+            },
+            {
+              "value": "30",
+              "label": {
+                "en": "30 p/kWh",
+                "fr": "30 p/kWh",
+                "de": "30 p/kWh",
+                "es": "30 p/kWh"
+              }
+            },
+            {
+              "value": "35",
+              "label": {
+                "en": "35 p/kWh",
+                "fr": "35 p/kWh",
+                "de": "35 p/kWh",
+                "es": "35 p/kWh"
+              }
+            },
+            {
+              "value": "40",
+              "label": {
+                "en": "40 p/kWh",
+                "fr": "40 p/kWh",
+                "de": "40 p/kWh",
+                "es": "40 p/kWh"
+              }
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "key": "price",
+          "type": "number",
+          "label": {
+            "en": "Price of the half-hour (p/kWh)",
+            "fr": "Prix de la demi-heure (p/kWh)",
+            "de": "Preis der Halbstunde (p/kWh)",
+            "es": "Precio de la media hora (p/kWh)"
+          }
+        },
+        {
+          "key": "hours",
+          "type": "number",
+          "label": {
+            "en": "Hours under the threshold",
+            "fr": "Heures sous le seuil",
+            "de": "Stunden unter der Schwelle",
+            "es": "Horas por debajo del umbral"
+          }
+        },
+        {
+          "key": "start_time",
+          "type": "string",
+          "label": {
+            "en": "Start (HH:MM)",
+            "fr": "Début (HH:MM)",
+            "de": "Beginn (HH:MM)",
+            "es": "Inicio (HH:MM)"
+          }
+        },
+        {
+          "key": "end_time",
+          "type": "string",
+          "label": {
+            "en": "End (HH:MM)",
+            "fr": "Fin (HH:MM)",
+            "de": "Ende (HH:MM)",
+            "es": "Fin (HH:MM)"
+          }
         }
       ]
     }
   ],
   "scene_actions": [
     {
-      "key": "identify_device",
-      "label": { "en": "Identify a device", "fr": "Identifier un appareil" },
-      "description": {
-        "en": "Make a device signal itself (the demo light blinks).",
-        "fr": "Fait se signaler un appareil (la lampe de démonstration clignote)."
+      "key": "find_cheapest_window",
+      "label": {
+        "en": "Find the cheapest forecast hours",
+        "fr": "Trouver les heures prévues les moins chères",
+        "de": "Günstigste prognostizierte Stunden finden",
+        "es": "Buscar las horas previstas más baratas"
       },
-      "timeout_seconds": 15,
+      "description": {
+        "en": "The cheapest run of N consecutive hours from now within the chosen time, in a region: start now, or at the time returned.",
+        "fr": "La suite de N heures consécutives la moins chère à partir de maintenant, dans le délai choisi, dans une région : démarrer tout de suite, ou à l'heure renvoyée.",
+        "de": "Die günstigste Folge von N aufeinanderfolgenden Stunden ab jetzt innerhalb der gewählten Zeit in einer Region: jetzt starten oder zur zurückgegebenen Uhrzeit.",
+        "es": "La serie de N horas consecutivas más barata desde ahora dentro del plazo elegido, en una región: empezar ya o a la hora devuelta."
+      },
+      "timeout_seconds": 40,
       "fields": [
         {
-          "key": "device",
+          "key": "region",
           "type": "select",
-          "source": "devices",
-          "label": { "en": "Device", "fr": "Appareil" },
-          "required": true
+          "label": {
+            "en": "Region",
+            "fr": "Région",
+            "de": "Region",
+            "es": "Región"
+          },
+          "required": true,
+          "options": [
+            {
+              "value": "A",
+              "label": {
+                "en": "A – Eastern England",
+                "fr": "A – Est de l'Angleterre",
+                "de": "A – Ostengland",
+                "es": "A – Este de Inglaterra"
+              }
+            },
+            {
+              "value": "B",
+              "label": {
+                "en": "B – East Midlands",
+                "fr": "B – Midlands de l’Est",
+                "de": "B – East Midlands",
+                "es": "B – Midlands del Este"
+              }
+            },
+            {
+              "value": "C",
+              "label": {
+                "en": "C – London",
+                "fr": "C – Londres",
+                "de": "C – London",
+                "es": "C – Londres"
+              }
+            },
+            {
+              "value": "D",
+              "label": {
+                "en": "D – Merseyside and North Wales",
+                "fr": "D – Merseyside et nord du pays de Galles",
+                "de": "D – Merseyside und Nordwales",
+                "es": "D – Merseyside y norte de Gales"
+              }
+            },
+            {
+              "value": "E",
+              "label": {
+                "en": "E – West Midlands",
+                "fr": "E – Midlands de l’Ouest",
+                "de": "E – West Midlands",
+                "es": "E – Midlands del Oeste"
+              }
+            },
+            {
+              "value": "F",
+              "label": {
+                "en": "F – North Eastern England",
+                "fr": "F – Nord-Est de l'Angleterre",
+                "de": "F – Nordostengland",
+                "es": "F – Noreste de Inglaterra"
+              }
+            },
+            {
+              "value": "G",
+              "label": {
+                "en": "G – North Western England",
+                "fr": "G – Nord-Ouest de l'Angleterre",
+                "de": "G – Nordwestengland",
+                "es": "G – Noroeste de Inglaterra"
+              }
+            },
+            {
+              "value": "H",
+              "label": {
+                "en": "H – Southern England",
+                "fr": "H – Sud de l'Angleterre",
+                "de": "H – Südengland",
+                "es": "H – Sur de Inglaterra"
+              }
+            },
+            {
+              "value": "J",
+              "label": {
+                "en": "J – South Eastern England",
+                "fr": "J – Sud-Est de l'Angleterre",
+                "de": "J – Südostengland",
+                "es": "J – Sureste de Inglaterra"
+              }
+            },
+            {
+              "value": "K",
+              "label": {
+                "en": "K – South Wales",
+                "fr": "K – Sud du pays de Galles",
+                "de": "K – Südwales",
+                "es": "K – Sur de Gales"
+              }
+            },
+            {
+              "value": "L",
+              "label": {
+                "en": "L – South Western England",
+                "fr": "L – Sud-Ouest de l'Angleterre",
+                "de": "L – Südwestengland",
+                "es": "L – Suroeste de Inglaterra"
+              }
+            },
+            {
+              "value": "M",
+              "label": {
+                "en": "M – Yorkshire",
+                "fr": "M – Yorkshire",
+                "de": "M – Yorkshire",
+                "es": "M – Yorkshire"
+              }
+            },
+            {
+              "value": "N",
+              "label": {
+                "en": "N – Southern Scotland",
+                "fr": "N – Sud de l'Écosse",
+                "de": "N – Südschottland",
+                "es": "N – Sur de Escocia"
+              }
+            },
+            {
+              "value": "P",
+              "label": {
+                "en": "P – Northern Scotland",
+                "fr": "P – Nord de l'Écosse",
+                "de": "P – Nordschottland",
+                "es": "P – Norte de Escocia"
+              }
+            },
+            {
+              "value": "X",
+              "label": {
+                "en": "X – National average",
+                "fr": "X – Moyenne nationale",
+                "de": "X – Landesdurchschnitt",
+                "es": "X – Media nacional"
+              }
+            }
+          ]
+        },
+        {
+          "key": "hours",
+          "type": "select",
+          "label": {
+            "en": "Duration",
+            "fr": "Durée",
+            "de": "Dauer",
+            "es": "Duración"
+          },
+          "required": true,
+          "default": "2",
+          "options": [
+            {
+              "value": "0.5",
+              "label": {
+                "en": "30 minutes",
+                "fr": "30 minutes",
+                "de": "30 Minuten",
+                "es": "30 minutos"
+              }
+            },
+            {
+              "value": "1",
+              "label": {
+                "en": "1 hour",
+                "fr": "1 heure",
+                "de": "1 Stunde",
+                "es": "1 hora"
+              }
+            },
+            {
+              "value": "1.5",
+              "label": {
+                "en": "1.5 hours",
+                "fr": "1 h 30",
+                "de": "1,5 Stunden",
+                "es": "1,5 horas"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "2 hours",
+                "fr": "2 heures",
+                "de": "2 Stunden",
+                "es": "2 horas"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "3 hours",
+                "fr": "3 heures",
+                "de": "3 Stunden",
+                "es": "3 horas"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "4 hours",
+                "fr": "4 heures",
+                "de": "4 Stunden",
+                "es": "4 horas"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "5 hours",
+                "fr": "5 heures",
+                "de": "5 Stunden",
+                "es": "5 horas"
+              }
+            },
+            {
+              "value": "6",
+              "label": {
+                "en": "6 hours",
+                "fr": "6 heures",
+                "de": "6 Stunden",
+                "es": "6 horas"
+              }
+            },
+            {
+              "value": "8",
+              "label": {
+                "en": "8 hours",
+                "fr": "8 heures",
+                "de": "8 Stunden",
+                "es": "8 horas"
+              }
+            }
+          ]
+        },
+        {
+          "key": "within",
+          "type": "select",
+          "label": {
+            "en": "Within",
+            "fr": "Dans les",
+            "de": "Innerhalb der",
+            "es": "Dentro de las"
+          },
+          "required": true,
+          "default": "24",
+          "options": [
+            {
+              "value": "6",
+              "label": {
+                "en": "Next 6 hours",
+                "fr": "6 prochaines heures",
+                "de": "Nächste 6 Stunden",
+                "es": "Próximas 6 horas"
+              }
+            },
+            {
+              "value": "12",
+              "label": {
+                "en": "Next 12 hours",
+                "fr": "12 prochaines heures",
+                "de": "Nächste 12 Stunden",
+                "es": "Próximas 12 horas"
+              }
+            },
+            {
+              "value": "24",
+              "label": {
+                "en": "Next 24 hours",
+                "fr": "24 prochaines heures",
+                "de": "Nächste 24 Stunden",
+                "es": "Próximas 24 horas"
+              }
+            },
+            {
+              "value": "48",
+              "label": {
+                "en": "Next 48 hours",
+                "fr": "48 prochaines heures",
+                "de": "Nächste 48 Stunden",
+                "es": "Próximas 48 horas"
+              }
+            },
+            {
+              "value": "72",
+              "label": {
+                "en": "Next 72 hours",
+                "fr": "72 prochaines heures",
+                "de": "Nächste 72 Stunden",
+                "es": "Próximas 72 horas"
+              }
+            },
+            {
+              "value": "168",
+              "label": {
+                "en": "Next 7 days",
+                "fr": "7 prochains jours",
+                "de": "Nächste 7 Tage",
+                "es": "Próximos 7 días"
+              }
+            }
+          ]
         }
       ],
       "outputs": [
         {
-          "key": "signalled",
+          "key": "found",
           "type": "boolean",
-          "label": { "en": "Device signalled", "fr": "Appareil signalé" }
+          "label": {
+            "en": "Window found",
+            "fr": "Plage trouvée",
+            "de": "Block gefunden",
+            "es": "Tramo encontrado"
+          }
+        },
+        {
+          "key": "starts_now",
+          "type": "boolean",
+          "label": {
+            "en": "Starts now",
+            "fr": "Commence maintenant",
+            "de": "Beginnt jetzt",
+            "es": "Empieza ahora"
+          }
+        },
+        {
+          "key": "start_date",
+          "type": "string",
+          "label": {
+            "en": "Start date (YYYY-MM-DD)",
+            "fr": "Date de début (AAAA-MM-JJ)",
+            "de": "Startdatum (JJJJ-MM-TT)",
+            "es": "Fecha de inicio (AAAA-MM-DD)"
+          }
+        },
+        {
+          "key": "start_time",
+          "type": "string",
+          "label": {
+            "en": "Start (HH:MM)",
+            "fr": "Début (HH:MM)",
+            "de": "Beginn (HH:MM)",
+            "es": "Inicio (HH:MM)"
+          }
+        },
+        {
+          "key": "end_time",
+          "type": "string",
+          "label": {
+            "en": "End (HH:MM)",
+            "fr": "Fin (HH:MM)",
+            "de": "Ende (HH:MM)",
+            "es": "Fin (HH:MM)"
+          }
+        },
+        {
+          "key": "average_price",
+          "type": "number",
+          "label": {
+            "en": "Average price (p/kWh)",
+            "fr": "Prix moyen (p/kWh)",
+            "de": "Durchschnittspreis (p/kWh)",
+            "es": "Precio medio (p/kWh)"
+          }
+        },
+        {
+          "key": "minutes_to_start",
+          "type": "number",
+          "label": {
+            "en": "Minutes until the start",
+            "fr": "Minutes avant le début",
+            "de": "Minuten bis zum Beginn",
+            "es": "Minutos hasta el inicio"
+          }
         }
       ]
     }
   ],
   "widgets": [
     {
-      "key": "demo_status",
-      "label": { "en": "Demo status", "fr": "État de la démo" },
-      "description": {
-        "en": "Live temperature and plug power, plug connection and observed location.",
-        "fr": "Température et puissance en direct, connexion de la prise, position observée."
+      "key": "forecast",
+      "label": {
+        "en": "Octopus Agile forecast",
+        "fr": "Prévision Octopus Agile",
+        "de": "Octopus-Agile-Prognose",
+        "es": "Previsión Octopus Agile"
       },
-      "icon": "activity",
-      "action_timeout_seconds": 15
+      "description": {
+        "en": "The forecast Agile prices of the days ahead, the current price and the cheapest hours.",
+        "fr": "Les prix Agile prévus des jours à venir, le prix actuel et les heures les moins chères.",
+        "de": "Die prognostizierten Agile-Preise der nächsten Tage, der aktuelle Preis und die günstigsten Stunden.",
+        "es": "Los precios Agile previstos de los próximos días, el precio actual y las horas más baratas."
+      },
+      "icon": "trending-down",
+      "settings": [
+        {
+          "key": "region",
+          "type": "select",
+          "label": {
+            "en": "Region",
+            "fr": "Région",
+            "de": "Region",
+            "es": "Región"
+          },
+          "description": {
+            "en": "Empty: your first configured region.",
+            "fr": "Vide : votre première région configurée.",
+            "de": "Leer: deine erste eingestellte Region.",
+            "es": "Vacío: su primera región configurada."
+          },
+          "required": false,
+          "options": [
+            {
+              "value": "A",
+              "label": {
+                "en": "A – Eastern England",
+                "fr": "A – Est de l'Angleterre",
+                "de": "A – Ostengland",
+                "es": "A – Este de Inglaterra"
+              }
+            },
+            {
+              "value": "B",
+              "label": {
+                "en": "B – East Midlands",
+                "fr": "B – Midlands de l’Est",
+                "de": "B – East Midlands",
+                "es": "B – Midlands del Este"
+              }
+            },
+            {
+              "value": "C",
+              "label": {
+                "en": "C – London",
+                "fr": "C – Londres",
+                "de": "C – London",
+                "es": "C – Londres"
+              }
+            },
+            {
+              "value": "D",
+              "label": {
+                "en": "D – Merseyside and North Wales",
+                "fr": "D – Merseyside et nord du pays de Galles",
+                "de": "D – Merseyside und Nordwales",
+                "es": "D – Merseyside y norte de Gales"
+              }
+            },
+            {
+              "value": "E",
+              "label": {
+                "en": "E – West Midlands",
+                "fr": "E – Midlands de l’Ouest",
+                "de": "E – West Midlands",
+                "es": "E – Midlands del Oeste"
+              }
+            },
+            {
+              "value": "F",
+              "label": {
+                "en": "F – North Eastern England",
+                "fr": "F – Nord-Est de l'Angleterre",
+                "de": "F – Nordostengland",
+                "es": "F – Noreste de Inglaterra"
+              }
+            },
+            {
+              "value": "G",
+              "label": {
+                "en": "G – North Western England",
+                "fr": "G – Nord-Ouest de l'Angleterre",
+                "de": "G – Nordwestengland",
+                "es": "G – Noroeste de Inglaterra"
+              }
+            },
+            {
+              "value": "H",
+              "label": {
+                "en": "H – Southern England",
+                "fr": "H – Sud de l'Angleterre",
+                "de": "H – Südengland",
+                "es": "H – Sur de Inglaterra"
+              }
+            },
+            {
+              "value": "J",
+              "label": {
+                "en": "J – South Eastern England",
+                "fr": "J – Sud-Est de l'Angleterre",
+                "de": "J – Südostengland",
+                "es": "J – Sureste de Inglaterra"
+              }
+            },
+            {
+              "value": "K",
+              "label": {
+                "en": "K – South Wales",
+                "fr": "K – Sud du pays de Galles",
+                "de": "K – Südwales",
+                "es": "K – Sur de Gales"
+              }
+            },
+            {
+              "value": "L",
+              "label": {
+                "en": "L – South Western England",
+                "fr": "L – Sud-Ouest de l'Angleterre",
+                "de": "L – Südwestengland",
+                "es": "L – Suroeste de Inglaterra"
+              }
+            },
+            {
+              "value": "M",
+              "label": {
+                "en": "M – Yorkshire",
+                "fr": "M – Yorkshire",
+                "de": "M – Yorkshire",
+                "es": "M – Yorkshire"
+              }
+            },
+            {
+              "value": "N",
+              "label": {
+                "en": "N – Southern Scotland",
+                "fr": "N – Sud de l'Écosse",
+                "de": "N – Südschottland",
+                "es": "N – Sur de Escocia"
+              }
+            },
+            {
+              "value": "P",
+              "label": {
+                "en": "P – Northern Scotland",
+                "fr": "P – Nord de l'Écosse",
+                "de": "P – Nordschottland",
+                "es": "P – Norte de Escocia"
+              }
+            },
+            {
+              "value": "X",
+              "label": {
+                "en": "X – National average",
+                "fr": "X – Moyenne nationale",
+                "de": "X – Landesdurchschnitt",
+                "es": "X – Media nacional"
+              }
+            }
+          ]
+        },
+        {
+          "key": "days",
+          "type": "select",
+          "label": {
+            "en": "Days shown",
+            "fr": "Jours affichés",
+            "de": "Angezeigte Tage",
+            "es": "Días mostrados"
+          },
+          "required": false,
+          "default": "7",
+          "options": [
+            {
+              "value": "2",
+              "label": {
+                "en": "2 days",
+                "fr": "2 jours",
+                "de": "2 Tage",
+                "es": "2 días"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "4 days",
+                "fr": "4 jours",
+                "de": "4 Tage",
+                "es": "4 días"
+              }
+            },
+            {
+              "value": "7",
+              "label": {
+                "en": "7 days",
+                "fr": "7 jours",
+                "de": "7 Tage",
+                "es": "7 días"
+              }
+            }
+          ]
+        },
+        {
+          "key": "show_tiles",
+          "type": "boolean",
+          "label": {
+            "en": "Show the price tiles",
+            "fr": "Afficher les tuiles de prix",
+            "de": "Preiskacheln anzeigen",
+            "es": "Mostrar los mosaicos de precios"
+          },
+          "required": false,
+          "default": true
+        },
+        {
+          "key": "show_status",
+          "type": "boolean",
+          "label": {
+            "en": "Show the cheapest window and the update",
+            "fr": "Afficher la plage la moins chère et la mise à jour",
+            "de": "Günstigsten Block und Aktualisierung anzeigen",
+            "es": "Mostrar el tramo más barato y la actualización"
+          },
+          "required": false,
+          "default": true
+        }
+      ]
     }
   ]
 }

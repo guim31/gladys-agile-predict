@@ -31,17 +31,25 @@ pushing.
 ## Architecture
 
 ```
-index.js                          SDK wiring only: handlers registered before connect()
-src/devices/index.js              registry of the device blueprints + dispatch helpers
-src/devices/<type>.js             one device type per file (buildDevice, onPoll, onSetValue...)
-src/scenes.js                     scene action handlers (manifest `scene_actions`)
-src/widgets.js                    dashboard widget handlers (manifest `widgets`)
+index.js                          SDK wiring only: src/app.js registers the handlers before connect()
+src/app.js                        refresh cycle (own minute timer, onPoll fallback), regions in use, states,
+                                  scene events, "refresh" action, scene action, widget, config, connection
+src/source.js                     AgilePredict API (/api/{region}?days=8), REGIONS, parsing, errors
+src/forecast.js                   one forecast per region in memory, refresh policy (1 h, backoff), snapshot
+src/prices.js                     pure computations: current slot, summary, cheapest window, p -> £
+src/device.js                     one device per configured region (external id on the letter "a") and its states
+src/triggers.js                   scene events fired when a half-hour begins
+src/scenes.js                     scene action: cheapest run of N hours within H hours, in a region
+src/widget.js                     "forecast" dashboard widget (manifest `widgets`)
+src/ledger.js                     slots whose scene events are out, silenced choices (/data/scene-events.json)
+src/time.js                       UK clock (Europe/London): HH:MM, weekday, day/month
+src/i18n.js                       device, region and feature names, every user-facing text, en/fr/de/es
+src/issues.js                     a repeated failure logged once, its recovery once
 src/config.js                     DEFAULT_CONFIG (mirrors the manifest defaults) + normalization
-src/weather.js                    example driver (Open-Meteo)
-gladys-assistant-integration.json manifest: name, config_schema, actions, image...
-docs/en.md, docs/fr.md            user documentation, re-hosted by Gladys (mandatory)
-test/                             node --test, against the SDK's fake Gladys (integration-sdk/testing)
-.github/scripts/release.mjs       release helpers (manifest bump, changelog), tested in test/
+gladys-assistant-integration.json manifest: config, action, triggers, scene action, widget
+docs/{en,fr,de,es}.md             user documentation, same sections (test/i18n.test.js)
+test/                             node --test, against the SDK's fake Gladys and a fake AgilePredict
+test/fixtures/source/             the real answers of 19/11/2026 for regions A and P
 ```
 
 ## Rules
@@ -82,6 +90,30 @@ test/                             node --test, against the SDK's fake Gladys (in
   manifest texts, and `docs/en.md` / `docs/fr.md`, kept in sync.
 - **Style.** Prettier formats, ESLint catches mistakes. Comments explain why,
   in English. Tests never touch the network.
+
+# Prévision Octopus Agile : source et pièges propres à cette intégration
+
+- **Source** : `https://agilepredict.com/api/{région}?days=8` (sans clé ; `/api/A` répond 301 vers `/api/A/`,
+  suivi par fetch). Réponse : `[{ name, created_at, prices: [{ date_time, agile_pred, agile_low, agile_high }] }]`,
+  demi-heures UTC en **p/kWh TVA comprise**, **à partir de la demi-heure où la prévision a été faite** (donc des
+  créneaux déjà passés : c'est le snapshot qui les saute). `created_at` donne la date de la prévision.
+- Régions : A à P sans I ni O (zones de distribution), plus **X** (moyenne nationale). **Une lettre inconnue répond
+  200 avec `prices: []`**, pas 404 : contrôlée avant l'appel (`REGIONS`) et rejetée comme « forecast is empty ».
+  `Z` est le prix de gros en £/MWh : volontairement absent. Des régions peuvent avoir des prix identiques (A et N
+  le 19/11/2026, B et C) : les multiplicateurs régionaux d'Octopus se recoupent.
+- Usage loyal (agilepredict.com/v2/limitations) : ~60 requêtes/min par IP, « once every few hours is plenty » :
+  une lecture par heure et par région utilisée.
+- Unités : l'appareil publie en **£/kWh** (`currency/decimal`, unité `pound-sterling`, apparue dans Gladys 5.2.0) ;
+  widget, déclencheurs (seuils 0 à 40) et action de scène parlent en **p/kWh**, l'unité des tarifs britanniques.
+- **Régions dans la config** (`multi_select`, aucune par défaut : un défaut faux publierait un mauvais appareil).
+  Sans région, statut rouge « choisissez votre région ». Déclencheurs et action de scène ont un champ `region`
+  **select obligatoire** (un événement par région : un joker ferait partir une scène plusieurs fois). Les
+  déclencheurs ne partent que pour les régions configurées ; l'action et le widget lisent à la demande une autre
+  région, qui reste lue 24 h (`ON_DEMAND_MS`).
+- Le cœur prend **300 points au plus par graphique** (`MAX_CHART_POINTS` du SDK) : 7 jours de demi-heures (336)
+  sont tracés heure par heure.
+- Le registre des scènes (`ledger.js`) garde, par région, la dernière demi-heure traitée ; les événements déjà
+  partis d'une demi-heure incomplète sont effacés **par région** (préfixe), pas en bloc.
 
 ---
 

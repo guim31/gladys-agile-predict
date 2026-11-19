@@ -30,6 +30,11 @@ Gladys before reporting a problem.
 
 In scope: the code of this repository and the Docker image it publishes.
 
+The integration stores no secret: it reads the public AgilePredict API
+(`agilepredict.com`), without account, token or key, over HTTPS. The only file
+it writes is `/data/scene-events.json` (the half-hours whose scene events were
+fired). It opens no port and talks to nothing on the local network.
+
 Out of scope: Gladys Assistant itself (see its
 [security policy](https://github.com/GladysAssistant/Gladys/security/policy)),
-and the third-party services and devices the integration talks to.
+and the third-party service the integration reads (AgilePredict).
