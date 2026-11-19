@@ -146,7 +146,7 @@ par AgilePredict (agilepredict.com) : citez-le si vous partagez ses chiffres.
 - **L'intégration demande une région** : cochez au moins une région dans sa
   configuration.
 - **L'intégration affiche un état d'erreur** : la prévision est illisible
-  (AgilePredict injoignable depuis 2 heures), ou elle couvre moins d'une
+  (AgilePredict injoignable depuis 2 heures, ou depuis le démarrage), ou elle couvre moins d'une
   journée à venir (le service ne publie plus). La dernière prévision lue reste
   utilisée.
 - **Aucun état sur l'appareil** : ajoutez l'appareil depuis l'onglet

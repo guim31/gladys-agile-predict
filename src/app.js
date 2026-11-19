@@ -245,9 +245,12 @@ export function createApp(gladys, options = {}) {
   async function runCycle({ forceRefresh = false, events = true } = {}) {
     lastCycleAt = now();
     for (const forecast of inUse()) {
-      const reason = forceRefresh ? 'asked by the user' : forecast.dueReason();
+      // The user's action reads the configured regions now, and fails on
+      // theirs only; a region a widget asked for keeps its own pace.
+      const forced = forceRefresh && config.regions.includes(forecast.region);
+      const reason = forced ? 'asked by the user' : forecast.dueReason();
       if (reason) {
-        await refresh(forecast, reason, { rethrow: forceRefresh });
+        await refresh(forecast, reason, { rethrow: forced });
       }
     }
     if (gladys.connected === false) {

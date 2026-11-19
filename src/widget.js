@@ -140,13 +140,15 @@ export function buildForecastContent({ snapshot, language: raw, settings = {} })
     tile(TEXT.average7d, snapshot.next7d?.average, 'calendar');
   }
 
-  const summary = summarize(shown);
+  const points = chartPoints(shown);
+  // The marks sit on the points drawn (hourly averages on 7 days).
+  const summary = summarize(points.map((point) => ({ start: new Date(point.t), price: point.v })));
   const label = (prefix, slot) => `${t(prefix)} ${weekdayTime(slot.start, timeZone, language)}`;
   components.push({
     type: 'chart',
     chart_type: WIDGET_CHART_TYPES.STEPLINE,
     unit: UNIT,
-    series: [{ name: t(TEXT.forecast), points: chartPoints(shown) }],
+    series: [{ name: t(TEXT.forecast), points }],
     annotations: [
       {
         t: summary.min.start.toISOString(),
@@ -168,7 +170,11 @@ export function buildForecastContent({ snapshot, language: raw, settings = {} })
     const items = [];
     if (snapshot.window) {
       items.push({
-        label: t(fill(TEXT.cheapestWindow, { hours: snapshot.windowHours })),
+        label: t(
+          fill(TEXT.cheapestWindow, {
+            hours: new Intl.NumberFormat(language).format(snapshot.windowHours),
+          }),
+        ),
         value:
           `${weekdayTime(snapshot.window.start, timeZone, language)} · ` +
           `${formatPrice(snapshot.window.average, language)} ${UNIT}`,

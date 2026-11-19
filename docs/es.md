@@ -144,7 +144,7 @@ Previsión de AgilePredict (agilepredict.com): cítelo si comparte sus cifras.
 - **La integración pide una región**: marque al menos una región en su
   configuración.
 - **La integración muestra un estado de error**: no se puede leer la previsión
-  (AgilePredict inaccesible desde hace 2 horas), o cubre menos de un día por
+  (AgilePredict inaccesible desde hace 2 horas o desde el inicio), o cubre menos de un día por
   delante (el servicio dejó de publicar). Se sigue usando la última previsión
   leída.
 - **Ningún estado en el dispositivo**: añada el dispositivo desde la pestaña

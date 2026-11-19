@@ -197,6 +197,11 @@ test('the refresh action: green when read, red with the reason otherwise', async
   const ok = await world.gladys.fake.action('refresh');
   assert.equal(ok.success, true);
   assert.equal(ok.data.message.fr, "Prévision lue pour 2 région(s), jusqu'au 27/11 16:00.");
+  // A region only the widget shows, failing (K answers an empty forecast),
+  // does not turn the user's action red.
+  await world.gladys.fake.widgetGet('forecast', { language: 'en', settings: { region: 'K' } });
+  const still = await world.gladys.fake.action('refresh');
+  assert.equal(still.success, true);
   world.source.down = true;
   const failed = await world.gladys.fake.action('refresh');
   assert.equal(failed.success, false);

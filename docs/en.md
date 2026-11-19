@@ -138,7 +138,7 @@ AgilePredict (agilepredict.com): credit it if you share its figures.
 - **The integration asks for a region**: tick at least one region in its
   settings.
 - **The integration shows an error status**: the forecast cannot be read
-  (AgilePredict unreachable for 2 hours), or it covers less than a day ahead
+  (AgilePredict unreachable for 2 hours, or since the start), or it covers less than a day ahead
   (the service stopped publishing). The last forecast read stays in use.
 - **No state on the device**: add the device from the Discovery tab, then use
   the **Read the forecast now** action.

@@ -20,7 +20,7 @@
 // filters scene events on equality and membership only, so the scene author
 // picks the region, N, H and the threshold in selects, and the integration
 // fires one event per region and choice that matches the half-hour. At most
-// 25 events per region and half-hour, far from the 300 per minute of the core.
+// 30 events per region and half-hour, far from the 300 per minute of the core.
 // -----------------------------------------------------------------------------
 
 import { cheapestWindow, roundPence, slotAfter, slotsBetween } from './prices.js';
@@ -85,10 +85,12 @@ export function eventsForSlot(region, slots, slot, timeZone) {
     }
   }
 
+  // Without the half-hour before, a crossing cannot be told from a run that
+  // was already under the threshold: nothing fires.
   const before = slots.find((other) => other.end.getTime() === start);
-  for (const threshold of THRESHOLDS) {
+  for (const threshold of before ? THRESHOLDS : []) {
     const limit = Number(threshold);
-    if (slot.price >= limit || (before && before.price < limit)) {
+    if (slot.price >= limit || before.price < limit) {
       continue;
     }
     // The run of slots under the threshold, as far as the forecast goes.

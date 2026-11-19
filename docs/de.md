@@ -146,7 +146,7 @@ gelesene Region wird 24 Stunden lang weiter gelesen. Prognose von AgilePredict
 - **Die Integration verlangt eine Region**: Hake in ihren Einstellungen
   mindestens eine Region an.
 - **Die Integration zeigt einen Fehlerstatus**: Die Prognose ist nicht lesbar
-  (AgilePredict seit 2 Stunden nicht erreichbar) oder reicht weniger als einen
+  (AgilePredict seit 2 Stunden oder seit dem Start nicht erreichbar) oder reicht weniger als einen
   Tag voraus (der Dienst veröffentlicht nicht mehr). Die zuletzt gelesene
   Prognose bleibt in Gebrauch.
 - **Kein Zustand am Gerät**: Füge das Gerät über den Tab Entdecken hinzu und
