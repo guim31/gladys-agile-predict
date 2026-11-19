@@ -1,0 +1,2318 @@
+[
+  {
+    "name": "Region | A 2026-11-19 16:15",
+    "created_at": "2026-11-19T16:16:18.563039Z",
+    "prices": [
+      {
+        "date_time": "2026-11-19T15:30:00Z",
+        "agile_pred": 43.69,
+        "agile_low": 43.48,
+        "agile_high": 43.9
+      },
+      {
+        "date_time": "2026-11-19T16:00:00Z",
+        "agile_pred": 55.62,
+        "agile_low": 55.41,
+        "agile_high": 55.83
+      },
+      {
+        "date_time": "2026-11-19T16:30:00Z",
+        "agile_pred": 55.91,
+        "agile_low": 55.7,
+        "agile_high": 56.12
+      },
+      {
+        "date_time": "2026-11-19T17:00:00Z",
+        "agile_pred": 56.25,
+        "agile_low": 56.04,
+        "agile_high": 56.46
+      },
+      {
+        "date_time": "2026-11-19T17:30:00Z",
+        "agile_pred": 56.43,
+        "agile_low": 56.22,
+        "agile_high": 56.64
+      },
+      {
+        "date_time": "2026-11-19T18:00:00Z",
+        "agile_pred": 55.78,
+        "agile_low": 55.57,
+        "agile_high": 55.99
+      },
+      {
+        "date_time": "2026-11-19T18:30:00Z",
+        "agile_pred": 55.91,
+        "agile_low": 55.7,
+        "agile_high": 56.12
+      },
+      {
+        "date_time": "2026-11-19T19:00:00Z",
+        "agile_pred": 42.41,
+        "agile_low": 42.2,
+        "agile_high": 42.62
+      },
+      {
+        "date_time": "2026-11-19T19:30:00Z",
+        "agile_pred": 40.79,
+        "agile_low": 40.58,
+        "agile_high": 41.0
+      },
+      {
+        "date_time": "2026-11-19T20:00:00Z",
+        "agile_pred": 36.35,
+        "agile_low": 36.14,
+        "agile_high": 36.56
+      },
+      {
+        "date_time": "2026-11-19T20:30:00Z",
+        "agile_pred": 34.24,
+        "agile_low": 34.03,
+        "agile_high": 34.45
+      },
+      {
+        "date_time": "2026-11-19T21:00:00Z",
+        "agile_pred": 33.2,
+        "agile_low": 32.99,
+        "agile_high": 33.41
+      },
+      {
+        "date_time": "2026-11-19T21:30:00Z",
+        "agile_pred": 31.77,
+        "agile_low": 31.56,
+        "agile_high": 31.98
+      },
+      {
+        "date_time": "2026-11-19T22:00:00Z",
+        "agile_pred": 31.15,
+        "agile_low": 30.94,
+        "agile_high": 31.36
+      },
+      {
+        "date_time": "2026-11-19T22:30:00Z",
+        "agile_pred": 30.54,
+        "agile_low": 30.33,
+        "agile_high": 30.75
+      },
+      {
+        "date_time": "2026-11-19T23:00:00Z",
+        "agile_pred": 29.64,
+        "agile_low": 29.43,
+        "agile_high": 29.85
+      },
+      {
+        "date_time": "2026-11-19T23:30:00Z",
+        "agile_pred": 30.24,
+        "agile_low": 30.03,
+        "agile_high": 30.45
+      },
+      {
+        "date_time": "2026-11-20T00:00:00Z",
+        "agile_pred": 30.17,
+        "agile_low": 29.96,
+        "agile_high": 30.38
+      },
+      {
+        "date_time": "2026-11-20T00:30:00Z",
+        "agile_pred": 31.11,
+        "agile_low": 30.9,
+        "agile_high": 31.32
+      },
+      {
+        "date_time": "2026-11-20T01:00:00Z",
+        "agile_pred": 30.26,
+        "agile_low": 30.05,
+        "agile_high": 30.47
+      },
+      {
+        "date_time": "2026-11-20T01:30:00Z",
+        "agile_pred": 30.05,
+        "agile_low": 29.84,
+        "agile_high": 30.26
+      },
+      {
+        "date_time": "2026-11-20T02:00:00Z",
+        "agile_pred": 30.22,
+        "agile_low": 30.01,
+        "agile_high": 30.43
+      },
+      {
+        "date_time": "2026-11-20T02:30:00Z",
+        "agile_pred": 29.98,
+        "agile_low": 29.77,
+        "agile_high": 30.19
+      },
+      {
+        "date_time": "2026-11-20T03:00:00Z",
+        "agile_pred": 30.26,
+        "agile_low": 30.05,
+        "agile_high": 30.47
+      },
+      {
+        "date_time": "2026-11-20T03:30:00Z",
+        "agile_pred": 29.84,
+        "agile_low": 29.63,
+        "agile_high": 30.05
+      },
+      {
+        "date_time": "2026-11-20T04:00:00Z",
+        "agile_pred": 29.92,
+        "agile_low": 29.71,
+        "agile_high": 30.13
+      },
+      {
+        "date_time": "2026-11-20T04:30:00Z",
+        "agile_pred": 29.64,
+        "agile_low": 29.43,
+        "agile_high": 29.85
+      },
+      {
+        "date_time": "2026-11-20T05:00:00Z",
+        "agile_pred": 32.04,
+        "agile_low": 31.83,
+        "agile_high": 32.25
+      },
+      {
+        "date_time": "2026-11-20T05:30:00Z",
+        "agile_pred": 31.36,
+        "agile_low": 31.15,
+        "agile_high": 31.57
+      },
+      {
+        "date_time": "2026-11-20T06:00:00Z",
+        "agile_pred": 34.74,
+        "agile_low": 34.53,
+        "agile_high": 34.95
+      },
+      {
+        "date_time": "2026-11-20T06:30:00Z",
+        "agile_pred": 36.82,
+        "agile_low": 36.61,
+        "agile_high": 37.03
+      },
+      {
+        "date_time": "2026-11-20T07:00:00Z",
+        "agile_pred": 40.02,
+        "agile_low": 39.81,
+        "agile_high": 40.23
+      },
+      {
+        "date_time": "2026-11-20T07:30:00Z",
+        "agile_pred": 43.28,
+        "agile_low": 43.07,
+        "agile_high": 43.49
+      },
+      {
+        "date_time": "2026-11-20T08:00:00Z",
+        "agile_pred": 41.11,
+        "agile_low": 40.9,
+        "agile_high": 41.32
+      },
+      {
+        "date_time": "2026-11-20T08:30:00Z",
+        "agile_pred": 41.18,
+        "agile_low": 40.97,
+        "agile_high": 41.39
+      },
+      {
+        "date_time": "2026-11-20T09:00:00Z",
+        "agile_pred": 41.68,
+        "agile_low": 41.47,
+        "agile_high": 41.89
+      },
+      {
+        "date_time": "2026-11-20T09:30:00Z",
+        "agile_pred": 40.93,
+        "agile_low": 40.72,
+        "agile_high": 41.14
+      },
+      {
+        "date_time": "2026-11-20T10:00:00Z",
+        "agile_pred": 38.4,
+        "agile_low": 38.19,
+        "agile_high": 38.61
+      },
+      {
+        "date_time": "2026-11-20T10:30:00Z",
+        "agile_pred": 36.82,
+        "agile_low": 36.61,
+        "agile_high": 37.03
+      },
+      {
+        "date_time": "2026-11-20T11:00:00Z",
+        "agile_pred": 36.99,
+        "agile_low": 36.78,
+        "agile_high": 37.2
+      },
+      {
+        "date_time": "2026-11-20T11:30:00Z",
+        "agile_pred": 38.27,
+        "agile_low": 38.06,
+        "agile_high": 38.48
+      },
+      {
+        "date_time": "2026-11-20T12:00:00Z",
+        "agile_pred": 38.58,
+        "agile_low": 38.37,
+        "agile_high": 38.79
+      },
+      {
+        "date_time": "2026-11-20T12:30:00Z",
+        "agile_pred": 39.29,
+        "agile_low": 39.08,
+        "agile_high": 39.5
+      },
+      {
+        "date_time": "2026-11-20T13:00:00Z",
+        "agile_pred": 39.94,
+        "agile_low": 39.73,
+        "agile_high": 40.15
+      },
+      {
+        "date_time": "2026-11-20T13:30:00Z",
+        "agile_pred": 40.2,
+        "agile_low": 39.99,
+        "agile_high": 40.41
+      },
+      {
+        "date_time": "2026-11-20T14:00:00Z",
+        "agile_pred": 42.63,
+        "agile_low": 42.42,
+        "agile_high": 42.84
+      },
+      {
+        "date_time": "2026-11-20T14:30:00Z",
+        "agile_pred": 43.86,
+        "agile_low": 43.65,
+        "agile_high": 44.07
+      },
+      {
+        "date_time": "2026-11-20T15:00:00Z",
+        "agile_pred": 44.39,
+        "agile_low": 44.18,
+        "agile_high": 44.6
+      },
+      {
+        "date_time": "2026-11-20T15:30:00Z",
+        "agile_pred": 47.2,
+        "agile_low": 46.99,
+        "agile_high": 47.41
+      },
+      {
+        "date_time": "2026-11-20T16:00:00Z",
+        "agile_pred": 61.97,
+        "agile_low": 61.76,
+        "agile_high": 62.18
+      },
+      {
+        "date_time": "2026-11-20T16:30:00Z",
+        "agile_pred": 64.04,
+        "agile_low": 63.83,
+        "agile_high": 64.25
+      },
+      {
+        "date_time": "2026-11-20T17:00:00Z",
+        "agile_pred": 64.27,
+        "agile_low": 64.06,
+        "agile_high": 64.48
+      },
+      {
+        "date_time": "2026-11-20T17:30:00Z",
+        "agile_pred": 63.84,
+        "agile_low": 63.63,
+        "agile_high": 64.05
+      },
+      {
+        "date_time": "2026-11-20T18:00:00Z",
+        "agile_pred": 64.18,
+        "agile_low": 63.97,
+        "agile_high": 64.39
+      },
+      {
+        "date_time": "2026-11-20T18:30:00Z",
+        "agile_pred": 63.76,
+        "agile_low": 63.55,
+        "agile_high": 63.97
+      },
+      {
+        "date_time": "2026-11-20T19:00:00Z",
+        "agile_pred": 49.79,
+        "agile_low": 49.58,
+        "agile_high": 50.0
+      },
+      {
+        "date_time": "2026-11-20T19:30:00Z",
+        "agile_pred": 49.16,
+        "agile_low": 48.95,
+        "agile_high": 49.37
+      },
+      {
+        "date_time": "2026-11-20T20:00:00Z",
+        "agile_pred": 48.9,
+        "agile_low": 48.69,
+        "agile_high": 49.11
+      },
+      {
+        "date_time": "2026-11-20T20:30:00Z",
+        "agile_pred": 44.45,
+        "agile_low": 44.24,
+        "agile_high": 44.66
+      },
+      {
+        "date_time": "2026-11-20T21:00:00Z",
+        "agile_pred": 42.86,
+        "agile_low": 42.65,
+        "agile_high": 43.07
+      },
+      {
+        "date_time": "2026-11-20T21:30:00Z",
+        "agile_pred": 38.03,
+        "agile_low": 37.82,
+        "agile_high": 38.24
+      },
+      {
+        "date_time": "2026-11-20T22:00:00Z",
+        "agile_pred": 34.92,
+        "agile_low": 34.71,
+        "agile_high": 35.13
+      },
+      {
+        "date_time": "2026-11-20T22:30:00Z",
+        "agile_pred": 33.83,
+        "agile_low": 33.62,
+        "agile_high": 34.04
+      },
+      {
+        "date_time": "2026-11-20T23:00:00Z",
+        "agile_pred": 36.59,
+        "agile_low": 33.86,
+        "agile_high": 39.72
+      },
+      {
+        "date_time": "2026-11-20T23:30:00Z",
+        "agile_pred": 35.57,
+        "agile_low": 33.24,
+        "agile_high": 39.09
+      },
+      {
+        "date_time": "2026-11-21T00:00:00Z",
+        "agile_pred": 35.56,
+        "agile_low": 33.15,
+        "agile_high": 39.01
+      },
+      {
+        "date_time": "2026-11-21T00:30:00Z",
+        "agile_pred": 36.32,
+        "agile_low": 33.55,
+        "agile_high": 39.41
+      },
+      {
+        "date_time": "2026-11-21T01:00:00Z",
+        "agile_pred": 36.77,
+        "agile_low": 33.79,
+        "agile_high": 39.64
+      },
+      {
+        "date_time": "2026-11-21T01:30:00Z",
+        "agile_pred": 36.26,
+        "agile_low": 33.52,
+        "agile_high": 39.38
+      },
+      {
+        "date_time": "2026-11-21T02:00:00Z",
+        "agile_pred": 35.53,
+        "agile_low": 32.97,
+        "agile_high": 38.82
+      },
+      {
+        "date_time": "2026-11-21T02:30:00Z",
+        "agile_pred": 35.11,
+        "agile_low": 32.55,
+        "agile_high": 38.4
+      },
+      {
+        "date_time": "2026-11-21T03:00:00Z",
+        "agile_pred": 35.01,
+        "agile_low": 32.32,
+        "agile_high": 38.18
+      },
+      {
+        "date_time": "2026-11-21T03:30:00Z",
+        "agile_pred": 34.85,
+        "agile_low": 32.08,
+        "agile_high": 37.94
+      },
+      {
+        "date_time": "2026-11-21T04:00:00Z",
+        "agile_pred": 34.39,
+        "agile_low": 31.51,
+        "agile_high": 37.75
+      },
+      {
+        "date_time": "2026-11-21T04:30:00Z",
+        "agile_pred": 34.36,
+        "agile_low": 31.14,
+        "agile_high": 37.76
+      },
+      {
+        "date_time": "2026-11-21T05:00:00Z",
+        "agile_pred": 34.78,
+        "agile_low": 31.0,
+        "agile_high": 38.01
+      },
+      {
+        "date_time": "2026-11-21T05:30:00Z",
+        "agile_pred": 35.02,
+        "agile_low": 31.58,
+        "agile_high": 38.58
+      },
+      {
+        "date_time": "2026-11-21T06:00:00Z",
+        "agile_pred": 36.1,
+        "agile_low": 32.28,
+        "agile_high": 39.28
+      },
+      {
+        "date_time": "2026-11-21T06:30:00Z",
+        "agile_pred": 36.88,
+        "agile_low": 33.0,
+        "agile_high": 40.0
+      },
+      {
+        "date_time": "2026-11-21T07:00:00Z",
+        "agile_pred": 37.18,
+        "agile_low": 34.13,
+        "agile_high": 41.14
+      },
+      {
+        "date_time": "2026-11-21T07:30:00Z",
+        "agile_pred": 39.51,
+        "agile_low": 34.98,
+        "agile_high": 41.99
+      },
+      {
+        "date_time": "2026-11-21T08:00:00Z",
+        "agile_pred": 39.42,
+        "agile_low": 36.81,
+        "agile_high": 43.82
+      },
+      {
+        "date_time": "2026-11-21T08:30:00Z",
+        "agile_pred": 42.66,
+        "agile_low": 38.01,
+        "agile_high": 45.02
+      },
+      {
+        "date_time": "2026-11-21T09:00:00Z",
+        "agile_pred": 43.12,
+        "agile_low": 39.24,
+        "agile_high": 46.25
+      },
+      {
+        "date_time": "2026-11-21T09:30:00Z",
+        "agile_pred": 43.1,
+        "agile_low": 38.87,
+        "agile_high": 45.88
+      },
+      {
+        "date_time": "2026-11-21T10:00:00Z",
+        "agile_pred": 41.54,
+        "agile_low": 38.04,
+        "agile_high": 45.05
+      },
+      {
+        "date_time": "2026-11-21T10:30:00Z",
+        "agile_pred": 40.65,
+        "agile_low": 37.2,
+        "agile_high": 44.21
+      },
+      {
+        "date_time": "2026-11-21T11:00:00Z",
+        "agile_pred": 40.56,
+        "agile_low": 36.72,
+        "agile_high": 43.73
+      },
+      {
+        "date_time": "2026-11-21T11:30:00Z",
+        "agile_pred": 40.1,
+        "agile_low": 36.31,
+        "agile_high": 43.31
+      },
+      {
+        "date_time": "2026-11-21T12:00:00Z",
+        "agile_pred": 39.41,
+        "agile_low": 35.9,
+        "agile_high": 42.91
+      },
+      {
+        "date_time": "2026-11-21T12:30:00Z",
+        "agile_pred": 39.34,
+        "agile_low": 35.91,
+        "agile_high": 42.92
+      },
+      {
+        "date_time": "2026-11-21T13:00:00Z",
+        "agile_pred": 40.13,
+        "agile_low": 36.21,
+        "agile_high": 43.22
+      },
+      {
+        "date_time": "2026-11-21T13:30:00Z",
+        "agile_pred": 40.32,
+        "agile_low": 37.22,
+        "agile_high": 44.23
+      },
+      {
+        "date_time": "2026-11-21T14:00:00Z",
+        "agile_pred": 42.39,
+        "agile_low": 38.56,
+        "agile_high": 45.57
+      },
+      {
+        "date_time": "2026-11-21T14:30:00Z",
+        "agile_pred": 44.14,
+        "agile_low": 39.98,
+        "agile_high": 46.99
+      },
+      {
+        "date_time": "2026-11-21T15:00:00Z",
+        "agile_pred": 44.57,
+        "agile_low": 41.12,
+        "agile_high": 48.13
+      },
+      {
+        "date_time": "2026-11-21T15:30:00Z",
+        "agile_pred": 45.82,
+        "agile_low": 42.74,
+        "agile_high": 49.75
+      },
+      {
+        "date_time": "2026-11-21T16:00:00Z",
+        "agile_pred": 61.99,
+        "agile_low": 56.41,
+        "agile_high": 66.59
+      },
+      {
+        "date_time": "2026-11-21T16:30:00Z",
+        "agile_pred": 63.41,
+        "agile_low": 56.65,
+        "agile_high": 70.0
+      },
+      {
+        "date_time": "2026-11-21T17:00:00Z",
+        "agile_pred": 63.37,
+        "agile_low": 55.41,
+        "agile_high": 71.93
+      },
+      {
+        "date_time": "2026-11-21T17:30:00Z",
+        "agile_pred": 62.12,
+        "agile_low": 54.45,
+        "agile_high": 70.97
+      },
+      {
+        "date_time": "2026-11-21T18:00:00Z",
+        "agile_pred": 60.54,
+        "agile_low": 53.44,
+        "agile_high": 69.96
+      },
+      {
+        "date_time": "2026-11-21T18:30:00Z",
+        "agile_pred": 60.33,
+        "agile_low": 51.63,
+        "agile_high": 68.15
+      },
+      {
+        "date_time": "2026-11-21T19:00:00Z",
+        "agile_pred": 43.7,
+        "agile_low": 36.88,
+        "agile_high": 53.4
+      },
+      {
+        "date_time": "2026-11-21T19:30:00Z",
+        "agile_pred": 42.28,
+        "agile_low": 34.69,
+        "agile_high": 51.21
+      },
+      {
+        "date_time": "2026-11-21T20:00:00Z",
+        "agile_pred": 40.76,
+        "agile_low": 32.93,
+        "agile_high": 49.45
+      },
+      {
+        "date_time": "2026-11-21T20:30:00Z",
+        "agile_pred": 38.42,
+        "agile_low": 31.4,
+        "agile_high": 47.93
+      },
+      {
+        "date_time": "2026-11-21T21:00:00Z",
+        "agile_pred": 37.71,
+        "agile_low": 29.52,
+        "agile_high": 46.05
+      },
+      {
+        "date_time": "2026-11-21T21:30:00Z",
+        "agile_pred": 35.11,
+        "agile_low": 28.16,
+        "agile_high": 44.68
+      },
+      {
+        "date_time": "2026-11-21T22:00:00Z",
+        "agile_pred": 34.33,
+        "agile_low": 26.74,
+        "agile_high": 43.27
+      },
+      {
+        "date_time": "2026-11-21T22:30:00Z",
+        "agile_pred": 33.47,
+        "agile_low": 25.66,
+        "agile_high": 42.19
+      },
+      {
+        "date_time": "2026-11-21T23:00:00Z",
+        "agile_pred": 31.87,
+        "agile_low": 24.49,
+        "agile_high": 41.01
+      },
+      {
+        "date_time": "2026-11-21T23:30:00Z",
+        "agile_pred": 30.79,
+        "agile_low": 23.5,
+        "agile_high": 40.02
+      },
+      {
+        "date_time": "2026-11-22T00:00:00Z",
+        "agile_pred": 30.5,
+        "agile_low": 22.9,
+        "agile_high": 39.43
+      },
+      {
+        "date_time": "2026-11-22T00:30:00Z",
+        "agile_pred": 30.1,
+        "agile_low": 23.08,
+        "agile_high": 39.6
+      },
+      {
+        "date_time": "2026-11-22T01:00:00Z",
+        "agile_pred": 31.3,
+        "agile_low": 22.88,
+        "agile_high": 39.4
+      },
+      {
+        "date_time": "2026-11-22T01:30:00Z",
+        "agile_pred": 29.9,
+        "agile_low": 22.37,
+        "agile_high": 38.9
+      },
+      {
+        "date_time": "2026-11-22T02:00:00Z",
+        "agile_pred": 28.6,
+        "agile_low": 20.97,
+        "agile_high": 37.49
+      },
+      {
+        "date_time": "2026-11-22T02:30:00Z",
+        "agile_pred": 27.08,
+        "agile_low": 20.11,
+        "agile_high": 36.63
+      },
+      {
+        "date_time": "2026-11-22T03:00:00Z",
+        "agile_pred": 27.33,
+        "agile_low": 19.82,
+        "agile_high": 36.34
+      },
+      {
+        "date_time": "2026-11-22T03:30:00Z",
+        "agile_pred": 27.71,
+        "agile_low": 19.61,
+        "agile_high": 36.14
+      },
+      {
+        "date_time": "2026-11-22T04:00:00Z",
+        "agile_pred": 26.48,
+        "agile_low": 19.07,
+        "agile_high": 35.59
+      },
+      {
+        "date_time": "2026-11-22T04:30:00Z",
+        "agile_pred": 25.69,
+        "agile_low": 17.96,
+        "agile_high": 34.49
+      },
+      {
+        "date_time": "2026-11-22T05:00:00Z",
+        "agile_pred": 24.39,
+        "agile_low": 16.8,
+        "agile_high": 33.32
+      },
+      {
+        "date_time": "2026-11-22T05:30:00Z",
+        "agile_pred": 22.99,
+        "agile_low": 15.4,
+        "agile_high": 31.93
+      },
+      {
+        "date_time": "2026-11-22T06:00:00Z",
+        "agile_pred": 21.51,
+        "agile_low": 14.94,
+        "agile_high": 31.47
+      },
+      {
+        "date_time": "2026-11-22T06:30:00Z",
+        "agile_pred": 23.01,
+        "agile_low": 14.9,
+        "agile_high": 31.43
+      },
+      {
+        "date_time": "2026-11-22T07:00:00Z",
+        "agile_pred": 22.86,
+        "agile_low": 15.6,
+        "agile_high": 32.12
+      },
+      {
+        "date_time": "2026-11-22T07:30:00Z",
+        "agile_pred": 23.6,
+        "agile_low": 15.86,
+        "agile_high": 32.38
+      },
+      {
+        "date_time": "2026-11-22T08:00:00Z",
+        "agile_pred": 23.8,
+        "agile_low": 17.28,
+        "agile_high": 33.8
+      },
+      {
+        "date_time": "2026-11-22T08:30:00Z",
+        "agile_pred": 27.12,
+        "agile_low": 19.14,
+        "agile_high": 35.66
+      },
+      {
+        "date_time": "2026-11-22T09:00:00Z",
+        "agile_pred": 29.16,
+        "agile_low": 20.84,
+        "agile_high": 37.36
+      },
+      {
+        "date_time": "2026-11-22T09:30:00Z",
+        "agile_pred": 28.9,
+        "agile_low": 21.01,
+        "agile_high": 37.53
+      },
+      {
+        "date_time": "2026-11-22T10:00:00Z",
+        "agile_pred": 27.63,
+        "agile_low": 21.33,
+        "agile_high": 37.85
+      },
+      {
+        "date_time": "2026-11-22T10:30:00Z",
+        "agile_pred": 30.13,
+        "agile_low": 21.8,
+        "agile_high": 38.32
+      },
+      {
+        "date_time": "2026-11-22T11:00:00Z",
+        "agile_pred": 30.3,
+        "agile_low": 23.11,
+        "agile_high": 39.63
+      },
+      {
+        "date_time": "2026-11-22T11:30:00Z",
+        "agile_pred": 31.56,
+        "agile_low": 23.93,
+        "agile_high": 40.45
+      },
+      {
+        "date_time": "2026-11-22T12:00:00Z",
+        "agile_pred": 32.6,
+        "agile_low": 24.92,
+        "agile_high": 41.44
+      },
+      {
+        "date_time": "2026-11-22T12:30:00Z",
+        "agile_pred": 33.28,
+        "agile_low": 25.73,
+        "agile_high": 42.25
+      },
+      {
+        "date_time": "2026-11-22T13:00:00Z",
+        "agile_pred": 33.99,
+        "agile_low": 26.35,
+        "agile_high": 42.87
+      },
+      {
+        "date_time": "2026-11-22T13:30:00Z",
+        "agile_pred": 34.44,
+        "agile_low": 26.93,
+        "agile_high": 43.45
+      },
+      {
+        "date_time": "2026-11-22T14:00:00Z",
+        "agile_pred": 35.04,
+        "agile_low": 27.55,
+        "agile_high": 44.07
+      },
+      {
+        "date_time": "2026-11-22T14:30:00Z",
+        "agile_pred": 35.83,
+        "agile_low": 28.53,
+        "agile_high": 45.05
+      },
+      {
+        "date_time": "2026-11-22T15:00:00Z",
+        "agile_pred": 37.38,
+        "agile_low": 29.65,
+        "agile_high": 46.17
+      },
+      {
+        "date_time": "2026-11-22T15:30:00Z",
+        "agile_pred": 38.41,
+        "agile_low": 31.54,
+        "agile_high": 48.06
+      },
+      {
+        "date_time": "2026-11-22T16:00:00Z",
+        "agile_pred": 54.49,
+        "agile_low": 46.16,
+        "agile_high": 62.68
+      },
+      {
+        "date_time": "2026-11-22T16:30:00Z",
+        "agile_pred": 55.25,
+        "agile_low": 47.55,
+        "agile_high": 64.08
+      },
+      {
+        "date_time": "2026-11-22T17:00:00Z",
+        "agile_pred": 55.59,
+        "agile_low": 47.98,
+        "agile_high": 64.5
+      },
+      {
+        "date_time": "2026-11-22T17:30:00Z",
+        "agile_pred": 55.77,
+        "agile_low": 48.24,
+        "agile_high": 64.77
+      },
+      {
+        "date_time": "2026-11-22T18:00:00Z",
+        "agile_pred": 56.04,
+        "agile_low": 48.74,
+        "agile_high": 65.26
+      },
+      {
+        "date_time": "2026-11-22T18:30:00Z",
+        "agile_pred": 57.08,
+        "agile_low": 48.82,
+        "agile_high": 65.34
+      },
+      {
+        "date_time": "2026-11-22T19:00:00Z",
+        "agile_pred": 43.01,
+        "agile_low": 35.96,
+        "agile_high": 52.48
+      },
+      {
+        "date_time": "2026-11-22T19:30:00Z",
+        "agile_pred": 43.46,
+        "agile_low": 35.35,
+        "agile_high": 51.87
+      },
+      {
+        "date_time": "2026-11-22T20:00:00Z",
+        "agile_pred": 42.26,
+        "agile_low": 34.36,
+        "agile_high": 50.89
+      },
+      {
+        "date_time": "2026-11-22T20:30:00Z",
+        "agile_pred": 40.05,
+        "agile_low": 33.03,
+        "agile_high": 49.56
+      },
+      {
+        "date_time": "2026-11-22T21:00:00Z",
+        "agile_pred": 39.47,
+        "agile_low": 31.0,
+        "agile_high": 47.52
+      },
+      {
+        "date_time": "2026-11-22T21:30:00Z",
+        "agile_pred": 36.16,
+        "agile_low": 29.71,
+        "agile_high": 46.23
+      },
+      {
+        "date_time": "2026-11-22T22:00:00Z",
+        "agile_pred": 36.17,
+        "agile_low": 28.07,
+        "agile_high": 44.6
+      },
+      {
+        "date_time": "2026-11-22T22:30:00Z",
+        "agile_pred": 34.56,
+        "agile_low": 27.68,
+        "agile_high": 44.2
+      },
+      {
+        "date_time": "2026-11-22T23:00:00Z",
+        "agile_pred": 34.98,
+        "agile_low": 26.72,
+        "agile_high": 43.25
+      },
+      {
+        "date_time": "2026-11-22T23:30:00Z",
+        "agile_pred": 33.31,
+        "agile_low": 26.01,
+        "agile_high": 42.53
+      },
+      {
+        "date_time": "2026-11-23T00:00:00Z",
+        "agile_pred": 32.43,
+        "agile_low": 25.34,
+        "agile_high": 41.86
+      },
+      {
+        "date_time": "2026-11-23T00:30:00Z",
+        "agile_pred": 32.95,
+        "agile_low": 25.51,
+        "agile_high": 42.03
+      },
+      {
+        "date_time": "2026-11-23T01:00:00Z",
+        "agile_pred": 33.83,
+        "agile_low": 25.9,
+        "agile_high": 42.42
+      },
+      {
+        "date_time": "2026-11-23T01:30:00Z",
+        "agile_pred": 33.58,
+        "agile_low": 25.96,
+        "agile_high": 42.48
+      },
+      {
+        "date_time": "2026-11-23T02:00:00Z",
+        "agile_pred": 33.15,
+        "agile_low": 25.68,
+        "agile_high": 42.2
+      },
+      {
+        "date_time": "2026-11-23T02:30:00Z",
+        "agile_pred": 32.97,
+        "agile_low": 25.44,
+        "agile_high": 41.97
+      },
+      {
+        "date_time": "2026-11-23T03:00:00Z",
+        "agile_pred": 32.89,
+        "agile_low": 25.27,
+        "agile_high": 41.79
+      },
+      {
+        "date_time": "2026-11-23T03:30:00Z",
+        "agile_pred": 32.61,
+        "agile_low": 25.16,
+        "agile_high": 41.68
+      },
+      {
+        "date_time": "2026-11-23T04:00:00Z",
+        "agile_pred": 32.65,
+        "agile_low": 25.04,
+        "agile_high": 41.56
+      },
+      {
+        "date_time": "2026-11-23T04:30:00Z",
+        "agile_pred": 32.53,
+        "agile_low": 25.36,
+        "agile_high": 41.88
+      },
+      {
+        "date_time": "2026-11-23T05:00:00Z",
+        "agile_pred": 33.57,
+        "agile_low": 25.9,
+        "agile_high": 42.43
+      },
+      {
+        "date_time": "2026-11-23T05:30:00Z",
+        "agile_pred": 34.29,
+        "agile_low": 27.17,
+        "agile_high": 43.69
+      },
+      {
+        "date_time": "2026-11-23T06:00:00Z",
+        "agile_pred": 36.32,
+        "agile_low": 29.38,
+        "agile_high": 45.91
+      },
+      {
+        "date_time": "2026-11-23T06:30:00Z",
+        "agile_pred": 40.21,
+        "agile_low": 33.05,
+        "agile_high": 49.58
+      },
+      {
+        "date_time": "2026-11-23T07:00:00Z",
+        "agile_pred": 45.31,
+        "agile_low": 37.05,
+        "agile_high": 53.57
+      },
+      {
+        "date_time": "2026-11-23T07:30:00Z",
+        "agile_pred": 48.31,
+        "agile_low": 39.21,
+        "agile_high": 55.73
+      },
+      {
+        "date_time": "2026-11-23T08:00:00Z",
+        "agile_pred": 46.69,
+        "agile_low": 39.31,
+        "agile_high": 55.84
+      },
+      {
+        "date_time": "2026-11-23T08:30:00Z",
+        "agile_pred": 45.62,
+        "agile_low": 37.79,
+        "agile_high": 54.31
+      },
+      {
+        "date_time": "2026-11-23T09:00:00Z",
+        "agile_pred": 43.73,
+        "agile_low": 36.35,
+        "agile_high": 52.87
+      },
+      {
+        "date_time": "2026-11-23T09:30:00Z",
+        "agile_pred": 42.37,
+        "agile_low": 34.92,
+        "agile_high": 51.44
+      },
+      {
+        "date_time": "2026-11-23T10:00:00Z",
+        "agile_pred": 41.34,
+        "agile_low": 34.0,
+        "agile_high": 50.52
+      },
+      {
+        "date_time": "2026-11-23T10:30:00Z",
+        "agile_pred": 40.96,
+        "agile_low": 33.8,
+        "agile_high": 50.33
+      },
+      {
+        "date_time": "2026-11-23T11:00:00Z",
+        "agile_pred": 41.79,
+        "agile_low": 33.89,
+        "agile_high": 50.41
+      },
+      {
+        "date_time": "2026-11-23T11:30:00Z",
+        "agile_pred": 41.6,
+        "agile_low": 34.24,
+        "agile_high": 50.77
+      },
+      {
+        "date_time": "2026-11-23T12:00:00Z",
+        "agile_pred": 42.01,
+        "agile_low": 34.6,
+        "agile_high": 51.13
+      },
+      {
+        "date_time": "2026-11-23T12:30:00Z",
+        "agile_pred": 42.88,
+        "agile_low": 35.2,
+        "agile_high": 51.72
+      },
+      {
+        "date_time": "2026-11-23T13:00:00Z",
+        "agile_pred": 43.38,
+        "agile_low": 35.74,
+        "agile_high": 52.26
+      },
+      {
+        "date_time": "2026-11-23T13:30:00Z",
+        "agile_pred": 43.62,
+        "agile_low": 36.19,
+        "agile_high": 52.71
+      },
+      {
+        "date_time": "2026-11-23T14:00:00Z",
+        "agile_pred": 44.23,
+        "agile_low": 36.35,
+        "agile_high": 52.88
+      },
+      {
+        "date_time": "2026-11-23T14:30:00Z",
+        "agile_pred": 43.88,
+        "agile_low": 36.94,
+        "agile_high": 53.47
+      },
+      {
+        "date_time": "2026-11-23T15:00:00Z",
+        "agile_pred": 45.4,
+        "agile_low": 37.5,
+        "agile_high": 54.03
+      },
+      {
+        "date_time": "2026-11-23T15:30:00Z",
+        "agile_pred": 45.91,
+        "agile_low": 39.1,
+        "agile_high": 55.63
+      },
+      {
+        "date_time": "2026-11-23T16:00:00Z",
+        "agile_pred": 61.68,
+        "agile_low": 53.69,
+        "agile_high": 70.21
+      },
+      {
+        "date_time": "2026-11-23T16:30:00Z",
+        "agile_pred": 63.16,
+        "agile_low": 55.13,
+        "agile_high": 71.66
+      },
+      {
+        "date_time": "2026-11-23T17:00:00Z",
+        "agile_pred": 63.24,
+        "agile_low": 55.23,
+        "agile_high": 71.76
+      },
+      {
+        "date_time": "2026-11-23T17:30:00Z",
+        "agile_pred": 61.98,
+        "agile_low": 54.7,
+        "agile_high": 71.23
+      },
+      {
+        "date_time": "2026-11-23T18:00:00Z",
+        "agile_pred": 61.58,
+        "agile_low": 53.84,
+        "agile_high": 70.36
+      },
+      {
+        "date_time": "2026-11-23T18:30:00Z",
+        "agile_pred": 60.65,
+        "agile_low": 52.25,
+        "agile_high": 68.77
+      },
+      {
+        "date_time": "2026-11-23T19:00:00Z",
+        "agile_pred": 44.19,
+        "agile_low": 37.26,
+        "agile_high": 53.78
+      },
+      {
+        "date_time": "2026-11-23T19:30:00Z",
+        "agile_pred": 42.6,
+        "agile_low": 35.03,
+        "agile_high": 51.56
+      },
+      {
+        "date_time": "2026-11-23T20:00:00Z",
+        "agile_pred": 40.98,
+        "agile_low": 33.48,
+        "agile_high": 50.01
+      },
+      {
+        "date_time": "2026-11-23T20:30:00Z",
+        "agile_pred": 39.54,
+        "agile_low": 32.12,
+        "agile_high": 48.64
+      },
+      {
+        "date_time": "2026-11-23T21:00:00Z",
+        "agile_pred": 38.51,
+        "agile_low": 30.73,
+        "agile_high": 47.26
+      },
+      {
+        "date_time": "2026-11-23T21:30:00Z",
+        "agile_pred": 36.83,
+        "agile_low": 29.05,
+        "agile_high": 45.58
+      },
+      {
+        "date_time": "2026-11-23T22:00:00Z",
+        "agile_pred": 34.49,
+        "agile_low": 27.2,
+        "agile_high": 43.72
+      },
+      {
+        "date_time": "2026-11-23T22:30:00Z",
+        "agile_pred": 32.94,
+        "agile_low": 25.89,
+        "agile_high": 42.41
+      },
+      {
+        "date_time": "2026-11-23T23:00:00Z",
+        "agile_pred": 32.9,
+        "agile_low": 24.75,
+        "agile_high": 41.27
+      },
+      {
+        "date_time": "2026-11-23T23:30:00Z",
+        "agile_pred": 31.07,
+        "agile_low": 24.49,
+        "agile_high": 41.02
+      },
+      {
+        "date_time": "2026-11-24T00:00:00Z",
+        "agile_pred": 32.18,
+        "agile_low": 24.24,
+        "agile_high": 40.76
+      },
+      {
+        "date_time": "2026-11-24T00:30:00Z",
+        "agile_pred": 32.15,
+        "agile_low": 24.81,
+        "agile_high": 41.33
+      },
+      {
+        "date_time": "2026-11-24T01:00:00Z",
+        "agile_pred": 32.76,
+        "agile_low": 24.73,
+        "agile_high": 41.26
+      },
+      {
+        "date_time": "2026-11-24T01:30:00Z",
+        "agile_pred": 31.97,
+        "agile_low": 24.46,
+        "agile_high": 40.98
+      },
+      {
+        "date_time": "2026-11-24T02:00:00Z",
+        "agile_pred": 31.32,
+        "agile_low": 23.57,
+        "agile_high": 40.1
+      },
+      {
+        "date_time": "2026-11-24T02:30:00Z",
+        "agile_pred": 30.11,
+        "agile_low": 22.71,
+        "agile_high": 39.24
+      },
+      {
+        "date_time": "2026-11-24T03:00:00Z",
+        "agile_pred": 29.39,
+        "agile_low": 21.81,
+        "agile_high": 38.33
+      },
+      {
+        "date_time": "2026-11-24T03:30:00Z",
+        "agile_pred": 28.61,
+        "agile_low": 21.24,
+        "agile_high": 37.76
+      },
+      {
+        "date_time": "2026-11-24T04:00:00Z",
+        "agile_pred": 28.39,
+        "agile_low": 20.4,
+        "agile_high": 36.92
+      },
+      {
+        "date_time": "2026-11-24T04:30:00Z",
+        "agile_pred": 26.87,
+        "agile_low": 20.06,
+        "agile_high": 36.58
+      },
+      {
+        "date_time": "2026-11-24T05:00:00Z",
+        "agile_pred": 27.59,
+        "agile_low": 20.0,
+        "agile_high": 36.52
+      },
+      {
+        "date_time": "2026-11-24T05:30:00Z",
+        "agile_pred": 28.21,
+        "agile_low": 21.12,
+        "agile_high": 37.65
+      },
+      {
+        "date_time": "2026-11-24T06:00:00Z",
+        "agile_pred": 30.25,
+        "agile_low": 22.83,
+        "agile_high": 39.35
+      },
+      {
+        "date_time": "2026-11-24T06:30:00Z",
+        "agile_pred": 32.7,
+        "agile_low": 25.19,
+        "agile_high": 41.71
+      },
+      {
+        "date_time": "2026-11-24T07:00:00Z",
+        "agile_pred": 35.29,
+        "agile_low": 27.53,
+        "agile_high": 44.05
+      },
+      {
+        "date_time": "2026-11-24T07:30:00Z",
+        "agile_pred": 37.27,
+        "agile_low": 29.26,
+        "agile_high": 45.78
+      },
+      {
+        "date_time": "2026-11-24T08:00:00Z",
+        "agile_pred": 37.9,
+        "agile_low": 30.18,
+        "agile_high": 46.71
+      },
+      {
+        "date_time": "2026-11-24T08:30:00Z",
+        "agile_pred": 38.06,
+        "agile_low": 30.27,
+        "agile_high": 46.8
+      },
+      {
+        "date_time": "2026-11-24T09:00:00Z",
+        "agile_pred": 37.55,
+        "agile_low": 30.26,
+        "agile_high": 46.79
+      },
+      {
+        "date_time": "2026-11-24T09:30:00Z",
+        "agile_pred": 37.86,
+        "agile_low": 30.04,
+        "agile_high": 46.56
+      },
+      {
+        "date_time": "2026-11-24T10:00:00Z",
+        "agile_pred": 37.39,
+        "agile_low": 29.77,
+        "agile_high": 46.3
+      },
+      {
+        "date_time": "2026-11-24T10:30:00Z",
+        "agile_pred": 36.74,
+        "agile_low": 29.76,
+        "agile_high": 46.28
+      },
+      {
+        "date_time": "2026-11-24T11:00:00Z",
+        "agile_pred": 37.81,
+        "agile_low": 29.89,
+        "agile_high": 46.41
+      },
+      {
+        "date_time": "2026-11-24T11:30:00Z",
+        "agile_pred": 37.79,
+        "agile_low": 30.33,
+        "agile_high": 46.85
+      },
+      {
+        "date_time": "2026-11-24T12:00:00Z",
+        "agile_pred": 38.07,
+        "agile_low": 30.46,
+        "agile_high": 46.99
+      },
+      {
+        "date_time": "2026-11-24T12:30:00Z",
+        "agile_pred": 38.21,
+        "agile_low": 30.75,
+        "agile_high": 47.28
+      },
+      {
+        "date_time": "2026-11-24T13:00:00Z",
+        "agile_pred": 38.66,
+        "agile_low": 30.92,
+        "agile_high": 47.45
+      },
+      {
+        "date_time": "2026-11-24T13:30:00Z",
+        "agile_pred": 38.58,
+        "agile_low": 31.17,
+        "agile_high": 47.7
+      },
+      {
+        "date_time": "2026-11-24T14:00:00Z",
+        "agile_pred": 38.95,
+        "agile_low": 31.48,
+        "agile_high": 48.0
+      },
+      {
+        "date_time": "2026-11-24T14:30:00Z",
+        "agile_pred": 39.58,
+        "agile_low": 31.91,
+        "agile_high": 48.43
+      },
+      {
+        "date_time": "2026-11-24T15:00:00Z",
+        "agile_pred": 39.87,
+        "agile_low": 32.22,
+        "agile_high": 48.75
+      },
+      {
+        "date_time": "2026-11-24T15:30:00Z",
+        "agile_pred": 39.9,
+        "agile_low": 33.14,
+        "agile_high": 49.66
+      },
+      {
+        "date_time": "2026-11-24T16:00:00Z",
+        "agile_pred": 55.33,
+        "agile_low": 47.1,
+        "agile_high": 63.62
+      },
+      {
+        "date_time": "2026-11-24T16:30:00Z",
+        "agile_pred": 55.75,
+        "agile_low": 48.26,
+        "agile_high": 64.79
+      },
+      {
+        "date_time": "2026-11-24T17:00:00Z",
+        "agile_pred": 56.39,
+        "agile_low": 48.64,
+        "agile_high": 65.17
+      },
+      {
+        "date_time": "2026-11-24T17:30:00Z",
+        "agile_pred": 56.47,
+        "agile_low": 48.49,
+        "agile_high": 65.02
+      },
+      {
+        "date_time": "2026-11-24T18:00:00Z",
+        "agile_pred": 55.3,
+        "agile_low": 48.12,
+        "agile_high": 64.65
+      },
+      {
+        "date_time": "2026-11-24T18:30:00Z",
+        "agile_pred": 55.28,
+        "agile_low": 47.12,
+        "agile_high": 63.65
+      },
+      {
+        "date_time": "2026-11-24T19:00:00Z",
+        "agile_pred": 40.47,
+        "agile_low": 33.28,
+        "agile_high": 49.8
+      },
+      {
+        "date_time": "2026-11-24T19:30:00Z",
+        "agile_pred": 39.76,
+        "agile_low": 32.05,
+        "agile_high": 48.57
+      },
+      {
+        "date_time": "2026-11-24T20:00:00Z",
+        "agile_pred": 38.59,
+        "agile_low": 31.07,
+        "agile_high": 47.59
+      },
+      {
+        "date_time": "2026-11-24T20:30:00Z",
+        "agile_pred": 37.53,
+        "agile_low": 30.07,
+        "agile_high": 46.59
+      },
+      {
+        "date_time": "2026-11-24T21:00:00Z",
+        "agile_pred": 36.75,
+        "agile_low": 28.72,
+        "agile_high": 45.25
+      },
+      {
+        "date_time": "2026-11-24T21:30:00Z",
+        "agile_pred": 34.56,
+        "agile_low": 27.21,
+        "agile_high": 43.73
+      },
+      {
+        "date_time": "2026-11-24T22:00:00Z",
+        "agile_pred": 33.0,
+        "agile_low": 25.63,
+        "agile_high": 42.15
+      },
+      {
+        "date_time": "2026-11-24T22:30:00Z",
+        "agile_pred": 32.0,
+        "agile_low": 24.68,
+        "agile_high": 41.21
+      },
+      {
+        "date_time": "2026-11-24T23:00:00Z",
+        "agile_pred": 31.73,
+        "agile_low": 23.79,
+        "agile_high": 40.31
+      },
+      {
+        "date_time": "2026-11-24T23:30:00Z",
+        "agile_pred": 30.31,
+        "agile_low": 23.36,
+        "agile_high": 39.88
+      },
+      {
+        "date_time": "2026-11-25T00:00:00Z",
+        "agile_pred": 30.72,
+        "agile_low": 23.06,
+        "agile_high": 39.59
+      },
+      {
+        "date_time": "2026-11-25T00:30:00Z",
+        "agile_pred": 30.84,
+        "agile_low": 23.36,
+        "agile_high": 39.89
+      },
+      {
+        "date_time": "2026-11-25T01:00:00Z",
+        "agile_pred": 31.21,
+        "agile_low": 23.39,
+        "agile_high": 39.91
+      },
+      {
+        "date_time": "2026-11-25T01:30:00Z",
+        "agile_pred": 30.81,
+        "agile_low": 23.27,
+        "agile_high": 39.8
+      },
+      {
+        "date_time": "2026-11-25T02:00:00Z",
+        "agile_pred": 30.48,
+        "agile_low": 22.77,
+        "agile_high": 39.3
+      },
+      {
+        "date_time": "2026-11-25T02:30:00Z",
+        "agile_pred": 29.7,
+        "agile_low": 22.25,
+        "agile_high": 38.78
+      },
+      {
+        "date_time": "2026-11-25T03:00:00Z",
+        "agile_pred": 29.24,
+        "agile_low": 21.75,
+        "agile_high": 38.27
+      },
+      {
+        "date_time": "2026-11-25T03:30:00Z",
+        "agile_pred": 28.97,
+        "agile_low": 21.53,
+        "agile_high": 38.05
+      },
+      {
+        "date_time": "2026-11-25T04:00:00Z",
+        "agile_pred": 29.05,
+        "agile_low": 20.95,
+        "agile_high": 37.48
+      },
+      {
+        "date_time": "2026-11-25T04:30:00Z",
+        "agile_pred": 27.53,
+        "agile_low": 20.7,
+        "agile_high": 37.22
+      },
+      {
+        "date_time": "2026-11-25T05:00:00Z",
+        "agile_pred": 28.19,
+        "agile_low": 20.62,
+        "agile_high": 37.15
+      },
+      {
+        "date_time": "2026-11-25T05:30:00Z",
+        "agile_pred": 28.83,
+        "agile_low": 21.84,
+        "agile_high": 38.36
+      },
+      {
+        "date_time": "2026-11-25T06:00:00Z",
+        "agile_pred": 31.16,
+        "agile_low": 23.55,
+        "agile_high": 40.08
+      },
+      {
+        "date_time": "2026-11-25T06:30:00Z",
+        "agile_pred": 33.34,
+        "agile_low": 25.75,
+        "agile_high": 42.27
+      },
+      {
+        "date_time": "2026-11-25T07:00:00Z",
+        "agile_pred": 35.42,
+        "agile_low": 28.14,
+        "agile_high": 44.66
+      },
+      {
+        "date_time": "2026-11-25T07:30:00Z",
+        "agile_pred": 38.33,
+        "agile_low": 30.0,
+        "agile_high": 46.52
+      },
+      {
+        "date_time": "2026-11-25T08:00:00Z",
+        "agile_pred": 38.92,
+        "agile_low": 31.42,
+        "agile_high": 47.94
+      },
+      {
+        "date_time": "2026-11-25T08:30:00Z",
+        "agile_pred": 39.68,
+        "agile_low": 31.79,
+        "agile_high": 48.32
+      },
+      {
+        "date_time": "2026-11-25T09:00:00Z",
+        "agile_pred": 39.46,
+        "agile_low": 32.22,
+        "agile_high": 48.74
+      },
+      {
+        "date_time": "2026-11-25T09:30:00Z",
+        "agile_pred": 40.19,
+        "agile_low": 32.41,
+        "agile_high": 48.94
+      },
+      {
+        "date_time": "2026-11-25T10:00:00Z",
+        "agile_pred": 40.26,
+        "agile_low": 32.52,
+        "agile_high": 49.05
+      },
+      {
+        "date_time": "2026-11-25T10:30:00Z",
+        "agile_pred": 39.8,
+        "agile_low": 32.31,
+        "agile_high": 48.83
+      },
+      {
+        "date_time": "2026-11-25T11:00:00Z",
+        "agile_pred": 39.55,
+        "agile_low": 32.1,
+        "agile_high": 48.62
+      },
+      {
+        "date_time": "2026-11-25T11:30:00Z",
+        "agile_pred": 39.62,
+        "agile_low": 32.0,
+        "agile_high": 48.53
+      },
+      {
+        "date_time": "2026-11-25T12:00:00Z",
+        "agile_pred": 39.52,
+        "agile_low": 31.88,
+        "agile_high": 48.4
+      },
+      {
+        "date_time": "2026-11-25T12:30:00Z",
+        "agile_pred": 39.18,
+        "agile_low": 31.7,
+        "agile_high": 48.22
+      },
+      {
+        "date_time": "2026-11-25T13:00:00Z",
+        "agile_pred": 39.07,
+        "agile_low": 31.49,
+        "agile_high": 48.01
+      },
+      {
+        "date_time": "2026-11-25T13:30:00Z",
+        "agile_pred": 38.88,
+        "agile_low": 31.42,
+        "agile_high": 47.94
+      },
+      {
+        "date_time": "2026-11-25T14:00:00Z",
+        "agile_pred": 38.97,
+        "agile_low": 31.47,
+        "agile_high": 47.99
+      },
+      {
+        "date_time": "2026-11-25T14:30:00Z",
+        "agile_pred": 39.22,
+        "agile_low": 31.64,
+        "agile_high": 48.17
+      },
+      {
+        "date_time": "2026-11-25T15:00:00Z",
+        "agile_pred": 39.41,
+        "agile_low": 32.21,
+        "agile_high": 48.73
+      },
+      {
+        "date_time": "2026-11-25T15:30:00Z",
+        "agile_pred": 40.68,
+        "agile_low": 33.87,
+        "agile_high": 50.39
+      },
+      {
+        "date_time": "2026-11-25T16:00:00Z",
+        "agile_pred": 57.19,
+        "agile_low": 48.81,
+        "agile_high": 65.34
+      },
+      {
+        "date_time": "2026-11-25T16:30:00Z",
+        "agile_pred": 58.26,
+        "agile_low": 50.9,
+        "agile_high": 67.42
+      },
+      {
+        "date_time": "2026-11-25T17:00:00Z",
+        "agile_pred": 59.93,
+        "agile_low": 51.8,
+        "agile_high": 68.33
+      },
+      {
+        "date_time": "2026-11-25T17:30:00Z",
+        "agile_pred": 59.91,
+        "agile_low": 52.28,
+        "agile_high": 68.8
+      },
+      {
+        "date_time": "2026-11-25T18:00:00Z",
+        "agile_pred": 59.67,
+        "agile_low": 52.19,
+        "agile_high": 68.71
+      },
+      {
+        "date_time": "2026-11-25T18:30:00Z",
+        "agile_pred": 59.66,
+        "agile_low": 50.92,
+        "agile_high": 67.45
+      },
+      {
+        "date_time": "2026-11-25T19:00:00Z",
+        "agile_pred": 43.12,
+        "agile_low": 36.6,
+        "agile_high": 53.13
+      },
+      {
+        "date_time": "2026-11-25T19:30:00Z",
+        "agile_pred": 42.72,
+        "agile_low": 34.76,
+        "agile_high": 51.28
+      },
+      {
+        "date_time": "2026-11-25T20:00:00Z",
+        "agile_pred": 41.12,
+        "agile_low": 33.64,
+        "agile_high": 50.17
+      },
+      {
+        "date_time": "2026-11-25T20:30:00Z",
+        "agile_pred": 39.77,
+        "agile_low": 32.47,
+        "agile_high": 49.0
+      },
+      {
+        "date_time": "2026-11-25T21:00:00Z",
+        "agile_pred": 39.21,
+        "agile_low": 31.01,
+        "agile_high": 47.54
+      },
+      {
+        "date_time": "2026-11-25T21:30:00Z",
+        "agile_pred": 36.74,
+        "agile_low": 29.63,
+        "agile_high": 46.15
+      },
+      {
+        "date_time": "2026-11-25T22:00:00Z",
+        "agile_pred": 35.61,
+        "agile_low": 27.78,
+        "agile_high": 44.3
+      },
+      {
+        "date_time": "2026-11-25T22:30:00Z",
+        "agile_pred": 33.65,
+        "agile_low": 26.65,
+        "agile_high": 43.18
+      },
+      {
+        "date_time": "2026-11-25T23:00:00Z",
+        "agile_pred": 33.37,
+        "agile_low": 25.4,
+        "agile_high": 41.93
+      },
+      {
+        "date_time": "2026-11-25T23:30:00Z",
+        "agile_pred": 31.87,
+        "agile_low": 25.1,
+        "agile_high": 41.62
+      },
+      {
+        "date_time": "2026-11-26T00:00:00Z",
+        "agile_pred": 32.74,
+        "agile_low": 24.99,
+        "agile_high": 41.52
+      },
+      {
+        "date_time": "2026-11-26T00:30:00Z",
+        "agile_pred": 33.05,
+        "agile_low": 25.54,
+        "agile_high": 42.06
+      },
+      {
+        "date_time": "2026-11-26T01:00:00Z",
+        "agile_pred": 33.5,
+        "agile_low": 25.54,
+        "agile_high": 42.06
+      },
+      {
+        "date_time": "2026-11-26T01:30:00Z",
+        "agile_pred": 32.75,
+        "agile_low": 25.2,
+        "agile_high": 41.73
+      },
+      {
+        "date_time": "2026-11-26T02:00:00Z",
+        "agile_pred": 32.04,
+        "agile_low": 24.64,
+        "agile_high": 41.16
+      },
+      {
+        "date_time": "2026-11-26T02:30:00Z",
+        "agile_pred": 31.8,
+        "agile_low": 24.24,
+        "agile_high": 40.76
+      },
+      {
+        "date_time": "2026-11-26T03:00:00Z",
+        "agile_pred": 31.55,
+        "agile_low": 24.06,
+        "agile_high": 40.59
+      },
+      {
+        "date_time": "2026-11-26T03:30:00Z",
+        "agile_pred": 31.52,
+        "agile_low": 23.81,
+        "agile_high": 40.33
+      },
+      {
+        "date_time": "2026-11-26T04:00:00Z",
+        "agile_pred": 31.03,
+        "agile_low": 23.28,
+        "agile_high": 39.8
+      },
+      {
+        "date_time": "2026-11-26T04:30:00Z",
+        "agile_pred": 29.96,
+        "agile_low": 22.95,
+        "agile_high": 39.47
+      },
+      {
+        "date_time": "2026-11-26T05:00:00Z",
+        "agile_pred": 30.53,
+        "agile_low": 23.11,
+        "agile_high": 39.63
+      },
+      {
+        "date_time": "2026-11-26T05:30:00Z",
+        "agile_pred": 31.52,
+        "agile_low": 23.93,
+        "agile_high": 40.45
+      },
+      {
+        "date_time": "2026-11-26T06:00:00Z",
+        "agile_pred": 32.41,
+        "agile_low": 24.89,
+        "agile_high": 41.41
+      },
+      {
+        "date_time": "2026-11-26T06:30:00Z",
+        "agile_pred": 33.4,
+        "agile_low": 26.21,
+        "agile_high": 42.74
+      },
+      {
+        "date_time": "2026-11-26T07:00:00Z",
+        "agile_pred": 35.51,
+        "agile_low": 28.0,
+        "agile_high": 44.53
+      },
+      {
+        "date_time": "2026-11-26T07:30:00Z",
+        "agile_pred": 37.78,
+        "agile_low": 29.37,
+        "agile_high": 45.89
+      },
+      {
+        "date_time": "2026-11-26T08:00:00Z",
+        "agile_pred": 37.5,
+        "agile_low": 30.07,
+        "agile_high": 46.59
+      },
+      {
+        "date_time": "2026-11-26T08:30:00Z",
+        "agile_pred": 37.61,
+        "agile_low": 29.93,
+        "agile_high": 46.46
+      },
+      {
+        "date_time": "2026-11-26T09:00:00Z",
+        "agile_pred": 37.37,
+        "agile_low": 30.04,
+        "agile_high": 46.56
+      },
+      {
+        "date_time": "2026-11-26T09:30:00Z",
+        "agile_pred": 37.81,
+        "agile_low": 30.04,
+        "agile_high": 46.56
+      },
+      {
+        "date_time": "2026-11-26T10:00:00Z",
+        "agile_pred": 37.62,
+        "agile_low": 30.08,
+        "agile_high": 46.61
+      },
+      {
+        "date_time": "2026-11-26T10:30:00Z",
+        "agile_pred": 37.5,
+        "agile_low": 30.18,
+        "agile_high": 46.71
+      },
+      {
+        "date_time": "2026-11-26T11:00:00Z",
+        "agile_pred": 38.11,
+        "agile_low": 30.59,
+        "agile_high": 47.12
+      },
+      {
+        "date_time": "2026-11-26T11:30:00Z",
+        "agile_pred": 38.85,
+        "agile_low": 31.27,
+        "agile_high": 47.8
+      },
+      {
+        "date_time": "2026-11-26T12:00:00Z",
+        "agile_pred": 39.54,
+        "agile_low": 31.88,
+        "agile_high": 48.41
+      },
+      {
+        "date_time": "2026-11-26T12:30:00Z",
+        "agile_pred": 39.93,
+        "agile_low": 32.47,
+        "agile_high": 48.99
+      },
+      {
+        "date_time": "2026-11-26T13:00:00Z",
+        "agile_pred": 40.61,
+        "agile_low": 32.95,
+        "agile_high": 49.48
+      },
+      {
+        "date_time": "2026-11-26T13:30:00Z",
+        "agile_pred": 40.99,
+        "agile_low": 33.56,
+        "agile_high": 50.09
+      },
+      {
+        "date_time": "2026-11-26T14:00:00Z",
+        "agile_pred": 41.76,
+        "agile_low": 34.12,
+        "agile_high": 50.64
+      },
+      {
+        "date_time": "2026-11-26T14:30:00Z",
+        "agile_pred": 42.28,
+        "agile_low": 34.7,
+        "agile_high": 51.22
+      },
+      {
+        "date_time": "2026-11-26T15:00:00Z",
+        "agile_pred": 42.73,
+        "agile_low": 35.14,
+        "agile_high": 51.66
+      },
+      {
+        "date_time": "2026-11-26T15:30:00Z",
+        "agile_pred": 43.08,
+        "agile_low": 36.6,
+        "agile_high": 53.12
+      },
+      {
+        "date_time": "2026-11-26T16:00:00Z",
+        "agile_pred": 59.67,
+        "agile_low": 50.92,
+        "agile_high": 67.44
+      },
+      {
+        "date_time": "2026-11-26T16:30:00Z",
+        "agile_pred": 59.69,
+        "agile_low": 52.53,
+        "agile_high": 69.06
+      },
+      {
+        "date_time": "2026-11-26T17:00:00Z",
+        "agile_pred": 60.93,
+        "agile_low": 52.91,
+        "agile_high": 69.43
+      },
+      {
+        "date_time": "2026-11-26T17:30:00Z",
+        "agile_pred": 60.79,
+        "agile_low": 53.17,
+        "agile_high": 69.69
+      },
+      {
+        "date_time": "2026-11-26T18:00:00Z",
+        "agile_pred": 60.48,
+        "agile_low": 52.77,
+        "agile_high": 69.3
+      },
+      {
+        "date_time": "2026-11-26T18:30:00Z",
+        "agile_pred": 59.73,
+        "agile_low": 51.32,
+        "agile_high": 67.84
+      },
+      {
+        "date_time": "2026-11-26T19:00:00Z",
+        "agile_pred": 43.43,
+        "agile_low": 36.6,
+        "agile_high": 53.13
+      },
+      {
+        "date_time": "2026-11-26T19:30:00Z",
+        "agile_pred": 42.33,
+        "agile_low": 34.74,
+        "agile_high": 51.26
+      },
+      {
+        "date_time": "2026-11-26T20:00:00Z",
+        "agile_pred": 41.13,
+        "agile_low": 33.55,
+        "agile_high": 50.08
+      },
+      {
+        "date_time": "2026-11-26T20:30:00Z",
+        "agile_pred": 39.87,
+        "agile_low": 32.46,
+        "agile_high": 48.99
+      },
+      {
+        "date_time": "2026-11-26T21:00:00Z",
+        "agile_pred": 39.07,
+        "agile_low": 30.96,
+        "agile_high": 47.48
+      },
+      {
+        "date_time": "2026-11-26T21:30:00Z",
+        "agile_pred": 36.62,
+        "agile_low": 29.26,
+        "agile_high": 45.78
+      },
+      {
+        "date_time": "2026-11-26T22:00:00Z",
+        "agile_pred": 34.77,
+        "agile_low": 27.27,
+        "agile_high": 43.8
+      },
+      {
+        "date_time": "2026-11-26T22:30:00Z",
+        "agile_pred": 33.11,
+        "agile_low": 26.0,
+        "agile_high": 42.52
+      },
+      {
+        "date_time": "2026-11-26T23:00:00Z",
+        "agile_pred": 32.8,
+        "agile_low": 24.92,
+        "agile_high": 41.44
+      },
+      {
+        "date_time": "2026-11-26T23:30:00Z",
+        "agile_pred": 31.52,
+        "agile_low": 24.67,
+        "agile_high": 41.2
+      },
+      {
+        "date_time": "2026-11-27T00:00:00Z",
+        "agile_pred": 32.37,
+        "agile_low": 24.47,
+        "agile_high": 41.0
+      },
+      {
+        "date_time": "2026-11-27T00:30:00Z",
+        "agile_pred": 32.2,
+        "agile_low": 24.74,
+        "agile_high": 41.27
+      },
+      {
+        "date_time": "2026-11-27T01:00:00Z",
+        "agile_pred": 32.33,
+        "agile_low": 24.72,
+        "agile_high": 41.24
+      },
+      {
+        "date_time": "2026-11-27T01:30:00Z",
+        "agile_pred": 32.29,
+        "agile_low": 24.57,
+        "agile_high": 41.09
+      },
+      {
+        "date_time": "2026-11-27T02:00:00Z",
+        "agile_pred": 31.76,
+        "agile_low": 24.37,
+        "agile_high": 40.89
+      },
+      {
+        "date_time": "2026-11-27T02:30:00Z",
+        "agile_pred": 31.72,
+        "agile_low": 24.02,
+        "agile_high": 40.55
+      },
+      {
+        "date_time": "2026-11-27T03:00:00Z",
+        "agile_pred": 31.27,
+        "agile_low": 23.62,
+        "agile_high": 40.15
+      },
+      {
+        "date_time": "2026-11-27T03:30:00Z",
+        "agile_pred": 30.56,
+        "agile_low": 23.05,
+        "agile_high": 39.57
+      },
+      {
+        "date_time": "2026-11-27T04:00:00Z",
+        "agile_pred": 29.99,
+        "agile_low": 22.57,
+        "agile_high": 39.1
+      },
+      {
+        "date_time": "2026-11-27T04:30:00Z",
+        "agile_pred": 29.85,
+        "agile_low": 22.67,
+        "agile_high": 39.19
+      },
+      {
+        "date_time": "2026-11-27T05:00:00Z",
+        "agile_pred": 30.83,
+        "agile_low": 23.03,
+        "agile_high": 39.56
+      },
+      {
+        "date_time": "2026-11-27T05:30:00Z",
+        "agile_pred": 31.1,
+        "agile_low": 23.82,
+        "agile_high": 40.34
+      },
+      {
+        "date_time": "2026-11-27T06:00:00Z",
+        "agile_pred": 32.19,
+        "agile_low": 25.18,
+        "agile_high": 41.7
+      },
+      {
+        "date_time": "2026-11-27T06:30:00Z",
+        "agile_pred": 34.93,
+        "agile_low": 27.19,
+        "agile_high": 43.72
+      },
+      {
+        "date_time": "2026-11-27T07:00:00Z",
+        "agile_pred": 37.13,
+        "agile_low": 30.11,
+        "agile_high": 46.63
+      },
+      {
+        "date_time": "2026-11-27T07:30:00Z",
+        "agile_pred": 40.95,
+        "agile_low": 32.02,
+        "agile_high": 48.54
+      },
+      {
+        "date_time": "2026-11-27T08:00:00Z",
+        "agile_pred": 40.65,
+        "agile_low": 33.36,
+        "agile_high": 49.89
+      },
+      {
+        "date_time": "2026-11-27T08:30:00Z",
+        "agile_pred": 41.17,
+        "agile_low": 33.33,
+        "agile_high": 49.85
+      },
+      {
+        "date_time": "2026-11-27T09:00:00Z",
+        "agile_pred": 40.84,
+        "agile_low": 33.47,
+        "agile_high": 49.99
+      },
+      {
+        "date_time": "2026-11-27T09:30:00Z",
+        "agile_pred": 41.07,
+        "agile_low": 33.32,
+        "agile_high": 49.84
+      },
+      {
+        "date_time": "2026-11-27T10:00:00Z",
+        "agile_pred": 40.72,
+        "agile_low": 33.05,
+        "agile_high": 49.57
+      },
+      {
+        "date_time": "2026-11-27T10:30:00Z",
+        "agile_pred": 40.02,
+        "agile_low": 32.62,
+        "agile_high": 49.14
+      },
+      {
+        "date_time": "2026-11-27T11:00:00Z",
+        "agile_pred": 39.79,
+        "agile_low": 32.1,
+        "agile_high": 48.62
+      },
+      {
+        "date_time": "2026-11-27T11:30:00Z",
+        "agile_pred": 39.15,
+        "agile_low": 31.44,
+        "agile_high": 47.97
+      },
+      {
+        "date_time": "2026-11-27T12:00:00Z",
+        "agile_pred": 38.06,
+        "agile_low": 31.0,
+        "agile_high": 47.52
+      },
+      {
+        "date_time": "2026-11-27T12:30:00Z",
+        "agile_pred": 38.47,
+        "agile_low": 30.82,
+        "agile_high": 47.34
+      },
+      {
+        "date_time": "2026-11-27T13:00:00Z",
+        "agile_pred": 38.6,
+        "agile_low": 30.97,
+        "agile_high": 47.49
+      },
+      {
+        "date_time": "2026-11-27T13:30:00Z",
+        "agile_pred": 38.51,
+        "agile_low": 31.23,
+        "agile_high": 47.76
+      },
+      {
+        "date_time": "2026-11-27T14:00:00Z",
+        "agile_pred": 39.27,
+        "agile_low": 31.75,
+        "agile_high": 48.27
+      },
+      {
+        "date_time": "2026-11-27T14:30:00Z",
+        "agile_pred": 40.15,
+        "agile_low": 32.44,
+        "agile_high": 48.96
+      },
+      {
+        "date_time": "2026-11-27T15:00:00Z",
+        "agile_pred": 40.57,
+        "agile_low": 33.1,
+        "agile_high": 49.62
+      },
+      {
+        "date_time": "2026-11-27T15:30:00Z",
+        "agile_pred": 41.25,
+        "agile_low": 34.58,
+        "agile_high": 51.11
+      }
+    ]
+  }
+]

@@ -1,67 +1,164 @@
-# Template de démonstration
+# Octopus Agile Forecast
 
-Ceci est la documentation utilisateur de l'intégration. Gladys ré-héberge ce
-fichier et affiche un lien **Documentation** permanent vers lui dans l'écran
-de configuration (dans la langue de l'utilisateur, avec l'anglais en repli) —
-c'est au moment de configurer que l'utilisateur en a le plus besoin. Gardez
-les courtes indications d'accueil dans les blocs `section` du `config_schema`
-du manifest ; mettez ici le pas-à-pas détaillé (captures d'écran, dépannage…).
+Prévoir les prix de l'électricité Octopus Agile pour les jours **après** ceux
+qui sont publiés, afin de planifier le lave-linge, le chauffe-eau, la batterie
+ou la recharge de la voiture jusqu'à une semaine à l'avance.
 
-## Ce que vous obtenez
+La prévision vient d'[AgilePredict](https://agilepredict.com), un service
+gratuit qui prévoit le prix de gros day-ahead britannique par apprentissage
+automatique, puis en tire le prix d'achat Agile de chaque région avec les
+formules publiées par Octopus, demi-heure par demi-heure, jusqu'à environ une
+semaine à l'avance.
 
-Six appareils de démonstration apparaissent après l'installation : une
-station météo (vraies données Open-Meteo), un interrupteur, une lampe
-variable, une prise connectée avec mesure de puissance, un détecteur de
-mouvement et une caméra.
+Développée sans contrat Agile pour comparer : vos retours sont les bienvenus.
+Sans lien avec Octopus Energy ni avec AgilePredict.
+
+## Présentation
+
+- Un appareil par région choisie, par exemple **Prévision Agile Londres** : le
+  prix prévu de la demi-heure en cours, le prix moyen, le plus bas et le plus
+  haut des 24 prochaines heures et des 7 prochains jours, le début et le prix
+  moyen de la plage d'heures consécutives la moins chère, la date de la
+  prévision et jusqu'où elle va.
+- Un widget de tableau de bord : la courbe prévue des 2, 4 ou 7 prochains
+  jours.
+- Deux déclencheurs de scène : les heures prévues les moins chères commencent,
+  le prix prévu passe sous un seuil.
+- Une action de scène : trouver les heures prévues les moins chères dans un
+  délai donné.
+
+Les prix sont les tarifs Agile **d'achat**, **TVA comprise**, sans
+l'abonnement. L'appareil les affiche en **£/kWh** (Gladys n'a pas d'unité en
+pence : 0,2551 signifie 25,51 p/kWh) ; le widget, les déclencheurs et l'action
+de scène parlent en **p/kWh**.
+
+C'est une **prévision**, pas les prix publiés : Octopus publie les vrais prix
+Agile du lendemain vers 16 h (heure britannique). Pour eux et pour votre
+compteur, utilisez l'intégration Octopus Energy à côté de celle-ci : celle-ci
+n'ajoute que les jours suivants.
+
+## Prérequis
+
+- Gladys Assistant 5.3.0 ou plus récent.
+- Un accès Internet depuis Gladys : la prévision vient d'agilepredict.com. Ni
+  compte ni clé.
+
+## Installation
+
+1. Dans Gladys, ouvrez **Intégrations → Installer depuis GitHub**.
+2. Saisissez `https://github.com/guim31/gladys-agile-predict`.
+3. Dans la configuration de l'intégration, cochez votre **région**.
+4. Ouvrez l'onglet **Découverte** de l'intégration et ajoutez l'appareil.
+5. Ajoutez le widget **Prévision Octopus Agile** à un tableau de bord.
 
 ## Configuration
 
-1. Ouvrez l'onglet **Configuration** de l'intégration.
-2. Renseignez la **latitude** et la **longitude** que la station météo de
-   démonstration doit observer (Paris par défaut), et choisissez votre unité
-   de température. L'**intervalle de rafraîchissement** règle la fréquence
-   de lecture de la station météo et de la puissance de la prise : toutes
-   les 5 minutes par défaut, toutes les minutes au plus.
-3. Enregistrez : les appareils apparaissent dans l'onglet **Découverte**,
-   prêts à être ajoutés.
+- **Régions** : la région de votre compteur, la lettre à la fin de votre code
+  de tarif Agile (`E-1R-AGILE-24-10-01-C` correspond à Londres, C). A à P sont
+  les quatorze zones de distribution, X la moyenne nationale. Un appareil par
+  région cochée ; aucune cochée, l'intégration attend et le dit.
+- **Durée de la plage la moins chère** (30 minutes à 8 heures, 3 heures par
+  défaut) et **Chercher la plage la moins chère dans** (les 12 prochaines
+  heures à 7 jours, 24 heures par défaut) : la plage affichée par les
+  appareils.
+- **Langue des noms des fonctionnalités** (français par défaut) : utilisée à
+  l'ajout de l'appareil ; les noms ne changent plus ensuite.
 
-Le réglage **Préférer la connexion locale** pilote la prise de
-démonstration : elle affiche en badge le canal réellement utilisé (local ou
-cloud), avec un point orange quand elle fonctionne en mode dégradé (local
-refusé, bascule cloud).
+## L'appareil de prévision
 
-## Actions
+| Fonctionnalité                         | Signification                                                |
+| -------------------------------------- | ------------------------------------------------------------ |
+| Prix prévu maintenant (£/kWh)          | le prix prévu de la demi-heure en cours                      |
+| Moyenne / Min / Max 24 h à venir       | sur les 48 demi-heures à partir de l'actuelle                |
+| Moyenne / Min / Max 7 jours à venir    | sur les 336 demi-heures à partir de l'actuelle               |
+| Début de la plage la moins chère       | jour et heure (Royaume-Uni), par ex. `mar. 03:00`            |
+| Moyenne plage moins chère (£/kWh)      | le prix prévu moyen de cette plage                           |
+| Prévision établie / Prévision jusqu'au | quand AgilePredict l'a faite, et la fin de sa dernière heure |
 
-- **Tester le fournisseur météo** — effectue une requête en direct vers
-  Open-Meteo et affiche la température et l'humidité actuelles sous le
-  bouton.
-- **Identifier un appareil** — choisissez un de vos appareils dans la liste
-  et il se signale (la lampe de démonstration « clignote » dans les logs).
+Les heures sont celles du Royaume-Uni (Europe/London), l'horloge des
+demi-heures Agile.
 
-## Scènes
+## Widget de tableau de bord
 
-L'intégration ajoute ses propres cartes à l'éditeur de scènes (Gladys 5.1
-ou plus récent), dans la catégorie **Intégrations** :
+La courbe prévue des 2 ou 4 prochains jours (une marche par demi-heure) ou des
+7 prochains jours (une marche par heure : le tableau de bord prend 300 points
+au plus), avec ses périodes la plus basse et la plus haute signalées ; trois
+tuiles en p/kWh (maintenant, moyenne des 24 prochaines heures et des 7
+prochains jours) ; la plage la moins chère, l'heure de la prévision et sa fin.
+Le réglage **région** choisit la région (par défaut la première cochée dans la
+configuration) ; les tuiles et les lignes d'état peuvent être masquées.
 
-- **Mouvement détecté** (déclencheur) — lance la scène quand un détecteur
-  de démonstration voit bouger quelque chose. Choisissez éventuellement le
-  détecteur et ce qui a bougé (personne, animal) ; laissés vides, toute
-  détection correspond. Les actions suivantes peuvent lire ce qui a bougé
-  avec `{{triggerEvent.data.target}}`.
-- **Identifier un appareil** (action) — fait se signaler l'appareil choisi.
-  Elle indique si l'appareil a pu se signaler, pour que les actions
-  suivantes puissent en dépendre.
+## Déclencheurs de scène
 
-## Tableau de bord
+Les deux déclencheurs ont un filtre **région** obligatoire. Ils ne partent que
+pour les régions cochées dans la configuration.
 
-Ajoutez le widget **État de la démo** à un tableau de bord : il affiche en
-direct la température de la station météo et la puissance de la prise du
-bureau, la connexion utilisée par la prise (en orange si dégradée) et la
-position observée. Son bouton **Identifier la lampe** fait se signaler la
-lampe de démonstration.
+### Les heures prévues les moins chères commencent
+
+Se déclenche quand commence la suite de N heures consécutives (30 minutes à 8
+heures) la moins chère des 12, 24 ou 48 prochaines heures : rien de moins cher
+n'est prévu avant cet horizon. Le même choix reste ensuite silencieux jusqu'à
+la fin de l'horizon : avec des prix en baisse toute une journée, la plage la
+moins chère commencerait sinon « maintenant » toutes les demi-heures.
+Variables : prix moyen (p/kWh), début et fin (HH:MM).
+
+### Le prix prévu passe sous un seuil
+
+Se déclenche au début d'une suite de demi-heures sous le seuil (0 à 40 p/kWh),
+quand la demi-heure d'avant était au-dessus. Variables : le prix de la
+demi-heure (p/kWh), le nombre d'heures sous le seuil, début et fin (HH:MM).
+
+## Action de scène
+
+**Trouver les heures prévues les moins chères** : dans une région, la suite de
+N heures consécutives (30 minutes à 8 heures) la moins chère à partir de
+maintenant, dans les 6 prochaines heures à 7 jours. Sorties : trouvée,
+commence maintenant, date de début (AAAA-MM-JJ), début et fin (HH:MM), prix
+moyen (p/kWh), minutes avant le début. Une région non cochée dans la
+configuration est lue à la demande. Sans prévision connue (source
+injoignable), l'action échoue en rouge.
+
+## Exemples de scènes
+
+- **Chauffe-eau** : déclencheur « Les heures prévues les moins chères
+  commencent » (région C, 3 heures, rien de moins cher dans les 24 prochaines
+  heures) → allumer la prise du chauffe-eau ; une seconde scène l'éteint trois
+  heures plus tard.
+- **Recharge de la voiture** : chaque soir à 20 h, action « Trouver les heures
+  prévues les moins chères » (région C, 4 heures dans les 48 heures) → envoyer
+  un message « recharger le {start_date} à {start_time} ».
+- **Prix négatifs** : déclencheur « Le prix prévu passe sous un seuil » (région
+  C, 0 p/kWh) → notifier.
+
+## Rafraîchissement et usage de la source
+
+Chaque région utilisée est lue une fois par heure (`/api/{région}?days=8`,
+environ 35 Ko). AgilePredict est un service gratuit, d'échelle amateur : il
+accepte environ 60 requêtes par minute et par adresse et demande d'interroger
+avec parcimonie, les nouvelles prévisions arrivant quelques fois par jour.
+Après un échec, les essais suivants viennent après 5, 10, 20, 40 puis 60
+minutes ; la dernière prévision lue reste utilisée entre-temps. Une région lue
+à la demande par le widget ou l'action de scène reste lue 24 heures. Prévision
+par AgilePredict (agilepredict.com) : citez-le si vous partagez ses chiffres.
 
 ## Dépannage
 
-L'intégration journalise tout ce qu'elle fait : consultez les logs de
-l'intégration depuis l'interface Gladys (ou `docker logs` sur l'hôte) avec
-`LOG_LEVEL=debug` pour le détail complet.
+- **L'intégration demande une région** : cochez au moins une région dans sa
+  configuration.
+- **L'intégration affiche un état d'erreur** : la prévision est illisible
+  (AgilePredict injoignable depuis 2 heures, ou depuis le démarrage), ou elle couvre moins d'une
+  journée à venir (le service ne publie plus). La dernière prévision lue reste
+  utilisée.
+- **Aucun état sur l'appareil** : ajoutez l'appareil depuis l'onglet
+  Découverte, puis utilisez l'action **Lire la prévision maintenant**.
+- Tout le détail dans les journaux de l'intégration, avec `LOG_LEVEL=debug`.
+
+## Limites
+
+- Une prévision n'est pas un prix : comptez plusieurs pence d'erreur, plus
+  pour les jours les plus lointains ou par temps inhabituel. Le site
+  d'AgilePredict montre sa précision passée.
+- Prix d'achat seulement (pas les prix d'export Agile Outgoing), TVA comprise
+  au taux domestique en vigueur.
+- La prévision dépend d'un service amateur gratuit : il peut ralentir ou
+  s'arrêter.
